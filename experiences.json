@@ -1,0 +1,83 @@
+[
+  {
+    "id": "mini-hechizo",
+    "title": "Pack Mini Hechizo",
+    "duration": "20 min",
+    "tagline": "Toque especial y unico para tu celebracion.",
+    "activities": [
+      "Una princesa a eleccion llega con magia y encanto",
+      "Gran bienvenida a homenajeada/o e invitados",
+      "Interacciones en personaje: saludos, charlas y fotos",
+      "Vestuario y produccion premium",
+      "Presencia en el momento de la torta",
+      "Cancion de cumpleanos feliz",
+      "Fotos con familia e invitados"
+    ]
+  },
+  {
+    "id": "magia-estelar",
+    "title": "Pack Magia Estelar",
+    "duration": "60 min",
+    "tagline": "Recorrido encantador en eventos grandes.",
+    "activities": [
+      "Una o dos princesas a eleccion recorriendo el evento",
+      "Interacciones en personaje: saludos, charlas y fotos",
+      "Vestuario y produccion premium",
+      "Acompanamiento encantador"
+    ]
+  },
+  {
+    "id": "sueno-princesa",
+    "title": "Pack Sueno de Princesa",
+    "duration": "40 min",
+    "tagline": "Show interactivo y artistico con canto en vivo.",
+    "activities": [
+      "Una princesa a eleccion",
+      "Gran bienvenida",
+      "Vestuario y produccion premium",
+      "Cuento de hadas en primera persona",
+      "Canto en vivo y participacion de los chicos",
+      "Interacciones en personaje: saludos, charlas y fotos",
+      "Momento de la torta y coronacion final"
+    ]
+  },
+  {
+    "id": "reino-magico",
+    "title": "Pack Reino Magico",
+    "duration": "55 min",
+    "tagline": "Experiencia completa con dos princesas.",
+    "activities": [
+      "Dos princesas a eleccion",
+      "Gran bienvenida",
+      "Vestuario y produccion premium",
+      "Cuento de hadas en primera persona",
+      "Canto en vivo y participacion",
+      "Interacciones en personaje: saludos, charlas y fotos",
+      "Momento de la torta y coronacion final"
+    ]
+  },
+  {
+    "id": "reina-del-hielo",
+    "title": "Show La Reina del Hielo",
+    "duration": "60 min",
+    "tagline": "Experiencia grupal unica del mundo congelado.",
+    "activities": [
+      "Elsa, Anna, Olaf y Kristoff en escena",
+      "Show recreando momentos inolvidables de la pelicula",
+      "Momento de la torta con los personajes",
+      "Interacciones: saludos, charlas y fotos"
+    ]
+  },
+  {
+    "id": "mensaje-magico",
+    "title": "Mensaje Magico",
+    "duration": "",
+    "tagline": "Video personalizado con dedicatoria especial.",
+    "activities": [
+      "Video personalizado de la princesa elegida",
+      "Mensaje con nombre y dedicatoria especial",
+      "Saludo magico lleno de dulzura"
+    ],
+    "extra": "Ideal para distancias o como complemento de un regalo"
+  }
+]
