@@ -246,6 +246,7 @@ a:hover { text-decoration: none; }
     flex-direction: row;
     justify-content: center;
     gap: 16px; 
+    padding: 0;
   }
 }
 .site-nav a { 
