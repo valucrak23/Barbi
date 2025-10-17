@@ -41,6 +41,9 @@ function toggleNav() {
     navToggle.setAttribute('aria-expanded', isNavOpen.toString());
     console.log('siteNav classes:', siteNav.className);
     
+    // Agregar/quitar clase al body para mover el contenido
+    document.body.classList.toggle('menu-open', isNavOpen);
+    
     // Agregar clase para animación del botón
     if (isNavOpen) {
         navToggle.classList.add('active');
@@ -54,6 +57,7 @@ function closeNav() {
     siteNav.classList.remove('open');
     navToggle.setAttribute('aria-expanded', 'false');
     navToggle.classList.remove('active');
+    document.body.classList.remove('menu-open');
 }
 
 // Funciones del slider
@@ -213,6 +217,39 @@ function hideSections() {
     opinionesSection.style.display = 'none';
 }
 
+// Función para manejar el estado activo de navegación
+function updateActiveNav() {
+    // Verificar qué sección está visible
+    const sections = document.querySelectorAll('section[id]');
+    let activeSection = null;
+    
+    sections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        const isVisible = rect.top < window.innerHeight * 0.3 && rect.bottom > window.innerHeight * 0.3;
+        
+        if (isVisible) {
+            activeSection = section.id;
+        }
+    });
+    
+    // Remover active de todos los li
+    document.querySelectorAll('.site-nav li').forEach(li => li.classList.remove('active'));
+    
+    // Marcar la sección activa o "Inicio" por defecto
+    if (activeSection) {
+        const activeLi = document.querySelector(`li a[href="#${activeSection}"]`)?.parentElement;
+        if (activeLi) {
+            activeLi.classList.add('active');
+        }
+    } else {
+        // Si no hay sección visible, marcar "Inicio" como activo
+        const inicioLi = document.querySelector('li a[href="#inicio"]')?.parentElement;
+        if (inicioLi) {
+            inicioLi.classList.add('active');
+        }
+    }
+}
+
 // Función para scroll suave y navegación activa
 function setupSmoothScroll() {
     const links = Array.from(document.querySelectorAll('a[href^="#"]'));
@@ -235,17 +272,25 @@ function setupSmoothScroll() {
         });
     });
     
-    // Observer para navegación activa
+    // Observer para navegación activa - SIMPLIFICADO
     const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            const id = '#' + entry.target.id;
-            const link = document.querySelector(`a[href='${id}']`);
-            if (!link) return;
-            link.classList.toggle('active', entry.isIntersecting);
-        });
-    }, { rootMargin: '-40% 0px -55% 0px', threshold: 0.01 });
+        // Solo actualizar cuando hay cambios
+        updateActiveNav();
+    }, { rootMargin: '-10% 0px -60% 0px', threshold: 0.1 });
     
     sections.forEach(sec => observer.observe(sec));
+    
+    // Marcar "Inicio" como activo por defecto al cargar
+    updateActiveNav();
+    
+    // Listener para scroll que actualice el estado activo
+    let scrollTimeout;
+    window.addEventListener('scroll', () => {
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+            updateActiveNav();
+        }, 100);
+    });
 }
 
 // Función para detectar texto del sistema agrandado
@@ -300,6 +345,12 @@ function setupTouchSlider() {
 
 // Inicialización
 document.addEventListener('DOMContentLoaded', async () => {
+    // Marcar "Inicio" como activo inmediatamente
+    const inicioLi = document.querySelector('li a[href="#inicio"]')?.parentElement;
+    if (inicioLi) {
+        inicioLi.classList.add('active');
+    }
+    
     // Cargar experiencias
     await loadExperiences();
     
@@ -379,6 +430,11 @@ document.addEventListener('DOMContentLoaded', async () => {
     
     // Configurar swipe táctil
     setupTouchSlider();
+    
+    // Asegurar que "Inicio" esté activo por defecto
+    setTimeout(() => {
+        updateActiveNav();
+    }, 100);
 });
 
 // Cleanup al descargar la página

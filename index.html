@@ -29,19 +29,18 @@
         
         <nav id="primary-nav" class="site-nav" role="navigation" aria-label="Principal">
             <ul>
-                <li><a href="#inicio">Inicio</a></li>
+                <li class="active"><a href="#inicio">Inicio</a></li>
                 <li><a href="#quienes">Quienes somos</a></li>
                 <li><a href="#experiencias">Experiencias</a></li>
                 <li><a href="#video-felicitacion">Video</a></li>
                 <li><a href="#preguntas">Preguntas</a></li>
                 <li><a href="#reserva">Reserva</a></li>
-                <li><a href="#contacto">Contacto</a></li>
             </ul>
         </nav>
     </header>
 
-    <main id="inicio">
-        <section class="hero">
+    <main>
+        <section class="hero" id="inicio">
             <div class="container hero-inner">
                 <div class="hero-copy">
                     <div class="hero-logo">
@@ -51,6 +50,21 @@
                         Creamos shows de princesas para eventos de todo tipo (infantiles,
                         presencias, corporativos, cumpleaños) para + de 3 años de edad en
                         CABA.
+                    </p>
+                    <p>
+                        Ofrecemos experiencias mágicas únicas con nuestras princesas profesionales,
+                        decoración temática, actividades interactivas y momentos inolvidables
+                        que harán que tu evento sea especial y memorable para todos los invitados.
+                    </p>
+                    <p>
+                        Nuestro equipo de actrices especializadas en personajes de princesas
+                        garantiza una experiencia auténtica y emocionante. Cada show incluye
+                        maquillaje profesional, vestuarios de alta calidad y accesorios temáticos.
+                    </p>
+                    <p>
+                        Trabajamos con flexibilidad horaria y nos adaptamos a cualquier espacio,
+                        desde salones de eventos hasta jardines privados. Contamos con seguro
+                        de responsabilidad civil y todos los permisos necesarios para tu tranquilidad.
                     </p>
                     <div class="hero-cta">
                         <a class="btn" href="#" id="heroReserveBtn" target="_blank" rel="noopener">Reservar</a>
@@ -169,17 +183,17 @@
         </section>
 
         <!-- Sección de Contacto (oculta por defecto) -->
-        <section id="contacto" class="section" style="display: none;">
+        <section id="contacto" class="section alt" style="display: none;">
             <div class="container">
                 <h2 class="section-title">
                     <img src="assets/para-usar/elementos_Contacto.png" alt="Contacto" class="section-icon">
                     Contacto
                 </h2>
                 <div class="contact-info">
-                    <p><strong>WhatsApp:</strong> +54 9 11 3394-2309</p>
-                    <p><strong>Email:</strong> info@princessclub.com</p>
-                    <p><strong>Ubicación:</strong> CABA, Argentina</p>
-                    <p><strong>Horarios:</strong> Lunes a Viernes 9:00 - 18:00</p>
+                    <p><span class="contact-label">WhatsApp:</span> +54 9 11 3394-2309</p>
+                    <p><span class="contact-label">Email:</span> info@princessclub.com</p>
+                    <p><span class="contact-label">Ubicación:</span> CABA, Argentina</p>
+                    <p><span class="contact-label">Horarios:</span> Lunes a Viernes 9:00 - 18:00</p>
                 </div>
                 <div class="hero-cta">
                     <a class="btn" href="https://wa.me/5491133942309" target="_blank" rel="noopener">Contactar por WhatsApp</a>
@@ -236,7 +250,10 @@
 
     <footer class="site-footer" role="contentinfo">
         <div class="container footer-inner">
-            <p>© <span id="year"></span> Princess Club — Lorem ipsum.</p>
+            <div class="footer-logo">
+                <img src="assets/para-usar/princessclub_logo-secundario.png" alt="Princess Club" class="footer-logo-img">
+            </div>
+            <p>© <span id="year"></span> Princess Club</p>
             <ul class="social">
                 <li><a href="#" aria-label="Contacto" class="social-link">
                     <img src="assets/para-usar/elementos_Contacto.png" alt="Contacto" class="social-icon">
