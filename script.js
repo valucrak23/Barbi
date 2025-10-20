@@ -158,11 +158,17 @@ function openModal(exp) {
     modalExtra.textContent = exp.extra || '';
     modalReserveBtn.href = waLink({ type: 'pkg', name: exp.title, duration: exp.duration, extra: exp.extra });
     modal.style.display = 'grid';
+    
+    // Detener scroll en móvil
+    document.body.style.overflow = 'hidden';
 }
 
 function closeModal() {
     modal.style.display = 'none';
     selectedExp = null;
+    
+    // Restaurar scroll
+    document.body.style.overflow = '';
 }
 
 // Función para enviar reserva

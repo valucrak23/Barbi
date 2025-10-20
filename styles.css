@@ -276,6 +276,13 @@ a:hover { text-decoration: none; }
 }
 
 /* Hero */
+.hero-title {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
 .hero { 
   padding: 32px 0; 
   position: relative;
