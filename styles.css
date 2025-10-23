@@ -534,7 +534,7 @@ summary { cursor: pointer; font-weight: 400; }
 .contact-label { 
   color: var(--color-soft); 
   font-family: 'Sour Gummy', cursive;
-  font-weight: 850; 
+  font-weight: 900; 
 }
 
 .opinions-grid { display: grid; gap: 16px; grid-template-columns: 1fr; margin-bottom: 20px; }
@@ -640,10 +640,16 @@ summary { cursor: pointer; font-weight: 400; }
     background-size: 50% auto;
   }
 }
-.modal-duration { font-weight: 700; color: var(--color-soft); margin: 0 0 16px; font-family: 'Sour Gummy', cursive !important; }
+.modal-duration, 
+#modalDuration { 
+  font-weight: 900; 
+  color: var(--color-soft); 
+  margin: 0 0 16px; 
+  font-family: 'Sour Gummy', cursive !important; 
+}
 .modal-body ul { list-style: none; padding-left: 0; }
 .modal-body li { 
-  padding-left: 30px; 
+  padding-left: 45px; 
   position: relative; 
   margin-bottom: 8px;
   background-image: url('assets/para-usar/elementos_Princesas.png');
@@ -671,6 +677,12 @@ summary { cursor: pointer; font-weight: 400; }
   .contact-label {
     font-family: 'Sour Gummy', cursive !important;
     font-weight: 400 !important;
+    line-height: 1.2 !important;
+  }
+  
+  .modal-header h3,
+  #modalTitle {
+    line-height: 1.1 !important;
   }
 }
 
