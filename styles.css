@@ -31,13 +31,7 @@
   font-display: swap;
 }
 
-@font-face {
-  font-family: 'Sour Gummy';
-  src: url('https://fonts.gstatic.com/s/sourgummy/v1/LhWnMV3XOfErErEq3IJhMAKdMA_k4uct.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
+/* Sour Gummy font - loaded via Google Fonts link in HTML */
 
 :root {
   --color-soft: #aebae1;
@@ -645,10 +639,19 @@ summary { cursor: pointer; font-weight: 400; }
 @media (max-width: 599px) {
   .modal-body,
   .modal-body *,
+  .modal-body p,
+  .modal-body li,
+  .modal-body h3,
+  .modal-body h4,
+  .modal-body h5,
+  .modal-body h6,
+  .modal-body span,
+  .modal-body div,
   .modal-duration,
   .pkg h3,
   .contact-label {
     font-family: 'Sour Gummy', cursive !important;
+    font-weight: 400 !important;
   }
 }
 
