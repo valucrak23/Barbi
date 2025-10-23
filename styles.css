@@ -574,6 +574,7 @@ summary { cursor: pointer; font-weight: 400; }
   }
   .modal-body {
     position: relative;
+    font-family: 'Sour Gummy', cursive;
   }
   .modal-body > * {
     position: relative;
