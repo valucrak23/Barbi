@@ -107,6 +107,15 @@ async function loadExperiences() {
     }
 }
 
+// Función para crear título con Ñ separada
+function createTitleWithSpecialN(title) {
+    modalTitle.innerHTML = ''; // Limpiar el título
+    
+    // Reemplazar "Sueño" con "Sue" + "ñ" (con fuente especial) + "o"
+    const modifiedTitle = title.replace('Sueño', 'Sue<span style="font-family: \'Sour Gummy\', cursive !important; font-weight: 900; font-size: 0.7em; vertical-align: 0.1em;">ñ</span>o');
+    modalTitle.innerHTML = modifiedTitle;
+}
+
 // Renderizar experiencias
 function renderExperiences() {
     experiencesContainer.innerHTML = '';
@@ -143,7 +152,8 @@ function renderExperiences() {
 // Funciones del modal
 function openModal(exp) {
     selectedExp = exp;
-    modalTitle.textContent = exp.title;
+    // Crear título con Ñ separada
+    createTitleWithSpecialN(exp.title);
     modalDuration.textContent = exp.duration ? `Duracion: ${exp.duration}` : '';
     
     modalActivities.innerHTML = '';

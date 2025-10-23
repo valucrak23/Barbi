@@ -392,7 +392,7 @@ a:hover { text-decoration: none; }
 .pkg { background: var(--color-white); border: 1px solid var(--color-soft); border-radius: 8px; padding: 16px; }
 .pkg h3 { margin: 0 0 6px; font-size: 32px; }
 .price { font-weight: normal; font-size: 1.1em; }
-.pkg-meta { color: var(--color-soft); margin: 0 0 8px; font-weight: 600; }
+.pkg-meta { color: var(--color-soft); margin: 0 0 8px; font-weight: 900; font-family: 'Sour Gummy', cursive !important; text-shadow: 0.5px 0.5px 0px rgba(0,0,0,0.3), 1px 1px 0px rgba(0,0,0,0.2), 1.5px 1.5px 0px rgba(0,0,0,0.1); }
 .pkg-tagline { margin: 0 0 8px; font-weight: normal; font-size: 1.05em; }
 
 /* Forms */
@@ -642,10 +642,11 @@ summary { cursor: pointer; font-weight: 400; }
 }
 .modal-duration, 
 #modalDuration { 
-  font-weight: 900; 
+  font-weight: 900 !important; 
   color: var(--color-soft); 
   margin: 0 0 16px; 
-  font-family: 'Sour Gummy', cursive !important; 
+  font-family: 'Sour Gummy', cursive !important;
+  text-shadow: 0.5px 0.5px 0px rgba(0,0,0,0.3), 1px 1px 0px rgba(0,0,0,0.2), 1.5px 1.5px 0px rgba(0,0,0,0.1);
 }
 .modal-body ul { list-style: none; padding-left: 0; }
 .modal-body li { 
