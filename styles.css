@@ -574,11 +574,12 @@ summary { cursor: pointer; font-weight: 400; }
   }
   .modal-body {
     position: relative;
-    font-family: 'Sour Gummy', cursive;
+    font-family: 'Sour Gummy', cursive !important;
   }
   .modal-body > * {
     position: relative;
     z-index: 2;
+    font-family: 'Sour Gummy', cursive !important;
   }
 }
 .modal-dialog > * {
@@ -597,7 +598,7 @@ summary { cursor: pointer; font-weight: 400; }
 .modal-body { 
   padding: 16px; 
   position: relative;
-  font-family: 'Sour Gummy', cursive;
+  font-family: 'Sour Gummy', cursive !important;
 }
 .modal-body::before {
   content: '';
@@ -620,7 +621,7 @@ summary { cursor: pointer; font-weight: 400; }
     background-size: 50% auto;
   }
 }
-.modal-duration { font-weight: 700; color: var(--color-soft); margin: 0 0 16px; }
+.modal-duration { font-weight: 700; color: var(--color-soft); margin: 0 0 16px; font-family: 'Sour Gummy', cursive !important; }
 .modal-body ul { list-style: none; padding-left: 0; }
 .modal-body li { 
   padding-left: 30px; 
