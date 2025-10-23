@@ -31,7 +31,13 @@
   font-display: swap;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Sour+Gummy&display=swap');
+@font-face {
+  font-family: 'Sour Gummy';
+  src: url('https://fonts.gstatic.com/s/sourgummy/v1/LhWnMV3XOfErErEq3IJhMAKdMA_k4uct.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
 
 :root {
   --color-soft: #aebae1;
@@ -634,6 +640,17 @@ summary { cursor: pointer; font-weight: 400; }
   color: var(--color-dark);
 }
 .modal-actions { padding: 12px 16px; border-top: 1px solid var(--color-soft); display: flex; justify-content: flex-end; }
+
+/* Mobile-first: Asegurar fuente en móviles */
+@media (max-width: 599px) {
+  .modal-body,
+  .modal-body *,
+  .modal-duration,
+  .pkg h3,
+  .contact-label {
+    font-family: 'Sour Gummy', cursive !important;
+  }
+}
 
 /* Responsive (mobile-first) */
 @media (min-width: 600px) {
