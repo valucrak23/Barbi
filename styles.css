@@ -31,7 +31,7 @@
   font-display: swap;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Sour+Gummy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap');
 
 :root {
   --color-soft: #aebae1;
@@ -70,7 +70,7 @@ h1, h2, h3, h4, h5, h6 { font-family: 'Bright Retro'; font-weight: 400; font-siz
 h3 { font-size: 32px !important; margin: 0 0 6px; }
 
 /* Títulos de paquetes con tipografía elegante */
-.pkg h3 { font-family: 'Sour Gummy', cursive; font-weight: 400; font-size: 28px !important; }
+.pkg h3 { font-family: 'Kalam', cursive; font-weight: 400; font-size: 28px !important; }
 
 /* A11y: fallback cuando el usuario tiene texto del sistema muy grande */
 body.a11y-large-text {
@@ -514,7 +514,7 @@ summary { cursor: pointer; font-weight: 400; }
 .contact-info p { margin: 8px 0; }
 .contact-label { 
   color: var(--color-soft); 
-  font-family: 'Sour Gummy', cursive;
+  font-family: 'Kalam', cursive;
   font-weight: 850; 
 }
 
@@ -574,12 +574,12 @@ summary { cursor: pointer; font-weight: 400; }
   }
   .modal-body {
     position: relative;
-    font-family: 'Sour Gummy', cursive !important;
+    font-family: 'Kalam', cursive !important;
   }
   .modal-body > * {
     position: relative;
     z-index: 2;
-    font-family: 'Sour Gummy', cursive !important;
+    font-family: 'Kalam', cursive !important;
   }
 }
 .modal-dialog > * {
@@ -598,7 +598,7 @@ summary { cursor: pointer; font-weight: 400; }
 .modal-body { 
   padding: 16px; 
   position: relative;
-  font-family: 'Sour Gummy', cursive !important;
+  font-family: 'Kalam', cursive !important;
 }
 .modal-body::before {
   content: '';
@@ -621,7 +621,7 @@ summary { cursor: pointer; font-weight: 400; }
     background-size: 50% auto;
   }
 }
-.modal-duration { font-weight: 700; color: var(--color-soft); margin: 0 0 16px; font-family: 'Sour Gummy', cursive !important; }
+.modal-duration { font-weight: 700; color: var(--color-soft); margin: 0 0 16px; font-family: 'Kalam', cursive !important; }
 .modal-body ul { list-style: none; padding-left: 0; }
 .modal-body li { 
   padding-left: 30px; 
