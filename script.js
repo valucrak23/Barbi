@@ -390,8 +390,11 @@ document.addEventListener('DOMContentLoaded', async () => {
         if (e.target === modal) closeModal();
     });
     
-    // Configurar formulario de reserva
-    reserveForm.addEventListener('submit', submitReserve);
+    // Configurar botón de reserva
+    const reserveSubmitBtn = document.getElementById('reserveSubmitBtn');
+    if (reserveSubmitBtn) {
+        reserveSubmitBtn.addEventListener('click', submitReserve);
+    }
     
     // Configurar enlaces de WhatsApp
     setupWhatsAppLinks();

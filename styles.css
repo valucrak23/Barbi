@@ -435,6 +435,10 @@ input:focus, textarea:focus { outline: 2px solid var(--color-accent); }
   color: var(--color-white);
 }
 
+#videoReserveBtn {
+  font-weight: 900;
+}
+
 /* Centrar botones y títulos */
 .hero-cta { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
 .modal-footer { text-align: center; }
