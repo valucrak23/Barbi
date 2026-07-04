@@ -2,27 +2,42 @@
  * Princess Club Web 2.0 — main.js
  */
 const WA_NUMBER = '5491133942309';
-const FEATURED_ID = 'sueno-princesa';
+const INSTAGRAM_URL = 'https://www.instagram.com/princessclubshows';
 
-let experiences = [];
-let selectedExp = null;
+let shows = [];
+let selectedShow = null;
 let isNavOpen = false;
 
-function buildWaUrl({ type, name, duration, form } = {}) {
+function buildWaUrl({ type, show, form, character, extra } = {}) {
   const base = `https://wa.me/${WA_NUMBER}`;
-  let text = '¡Hola! Quiero reservar con Princess Club.';
+  let text = '¡Hola Princess Club! Quiero consultar por un show.';
 
-  if (type === 'pkg') {
-    text = `¡Hola! Quiero reservar el ${name}${duration ? ` (${duration})` : ''}.`;
+  if (type === 'show' && show) {
+    text = `Hola Princess Club, quiero consultar por el show de ${show.meta} (${show.title}). Mi fecha sería: ____ y el evento es en: ____.`;
   }
-  if (type === 'video') {
-    text = '¡Hola! Quiero encargar un Video de Felicitación personalizado.';
+  if (type === 'character') {
+    text = `Hola Princess Club, quiero consultar disponibilidad del personaje o temática: ${character || 'a definir'}.`;
+  }
+  if (type === 'maquillaje') {
+    text = 'Hola Princess Club, quiero consultar por maquillaje artístico para mi evento.';
   }
   if (type === 'form' && form) {
-    text = `¡Hola! Soy ${form.name}. Email: ${form.email}. ${form.message}`;
+    text = [
+      '¡Hola Princess Club, quiero consultar por un show!',
+      '',
+      `Nombre: ${form.name}`,
+      `Fecha: ${form.date}`,
+      `Zona: ${form.zone}`,
+      `Show: ${form.show}`,
+      `Personaje o temática: ${form.theme}`,
+      `Cantidad aproximada de chicos: ${form.kids}`,
+      form.message ? `Mensaje: ${form.message}` : '',
+    ]
+      .filter(Boolean)
+      .join('\n');
   }
-  if (type === 'opinion') {
-    text = '¡Hola! Quiero dejar mi opinión sobre el show de Princess Club.';
+  if (extra) {
+    text = extra;
   }
 
   return `${base}?text=${encodeURIComponent(text)}`;
@@ -36,25 +51,22 @@ const els = {
   headerReserveBtn: document.getElementById('headerReserveBtn'),
   drawerReserveBtn: document.getElementById('drawerReserveBtn'),
   heroReserveBtn: document.getElementById('heroReserveBtn'),
-  videoReserveBtn: document.getElementById('videoReserveBtn'),
-  opinionBtn: document.getElementById('opinionBtn'),
+  maquillajeBtn: document.getElementById('maquillajeBtn'),
+  characterBtn: document.getElementById('characterBtn'),
+  instagramBtn: document.getElementById('instagramBtn'),
+  instagramBtnFooter: document.getElementById('instagramBtnFooter'),
   fabWa: document.getElementById('fabWa'),
-  experiencesContainer: document.getElementById('experiencesContainer'),
+  showsContainer: document.getElementById('showsContainer'),
+  formError: document.getElementById('formError'),
   modal: document.getElementById('modal'),
   modalBackdrop: document.getElementById('modalBackdrop'),
   modalTitle: document.getElementById('modalTitle'),
-  modalDuration: document.getElementById('modalDuration'),
+  modalMeta: document.getElementById('modalMeta'),
+  modalPrice: document.getElementById('modalPrice'),
   modalActivities: document.getElementById('modalActivities'),
-  modalExtra: document.getElementById('modalExtra'),
   modalCloseBtn: document.getElementById('modalCloseBtn'),
   modalReserveBtn: document.getElementById('modalReserveBtn'),
   reserveForm: document.getElementById('reserveForm'),
-  galleryTrack: document.getElementById('galleryTrack'),
-  galleryPrev: document.getElementById('galleryPrev'),
-  galleryNext: document.getElementById('galleryNext'),
-  galleryDots: document.getElementById('galleryDots'),
-  testimonialsTrack: document.getElementById('testimonialsTrack'),
-  testimonialsDots: document.getElementById('testimonialsDots'),
   year: document.getElementById('year'),
 };
 
@@ -83,28 +95,20 @@ function toggleNav() {
   else openNav();
 }
 
-function openModal(exp) {
-  selectedExp = exp;
-  els.modalTitle.textContent = exp.title;
-  els.modalDuration.textContent = exp.duration ? `Duración: ${exp.duration}` : '';
-  els.modalDuration.hidden = !exp.duration;
+function openModal(show) {
+  selectedShow = show;
+  els.modalTitle.textContent = show.title;
+  els.modalMeta.textContent = show.meta;
+  els.modalPrice.textContent = show.price;
 
   els.modalActivities.innerHTML = '';
-  (exp.activities || []).forEach((activity) => {
+  (show.includes || []).forEach((item) => {
     const li = document.createElement('li');
-    li.textContent = activity;
+    li.textContent = item;
     els.modalActivities.appendChild(li);
   });
 
-  if (exp.extra) {
-    els.modalExtra.textContent = exp.extra;
-    els.modalExtra.hidden = false;
-  } else {
-    els.modalExtra.textContent = '';
-    els.modalExtra.hidden = true;
-  }
-
-  els.modalReserveBtn.href = buildWaUrl({ type: 'pkg', name: exp.title, duration: exp.duration });
+  els.modalReserveBtn.href = buildWaUrl({ type: 'show', show });
   els.modal.classList.add('is-open');
   els.modal.setAttribute('aria-hidden', 'false');
   document.body.classList.add('modal-open');
@@ -115,137 +119,54 @@ function closeModal() {
   els.modal.classList.remove('is-open');
   els.modal.setAttribute('aria-hidden', 'true');
   document.body.classList.remove('modal-open');
-  selectedExp = null;
+  selectedShow = null;
 }
 
-async function loadExperiences() {
+async function loadShows() {
   try {
     const response = await fetch('./experiences.json');
     if (!response.ok) throw new Error('Network error');
-    experiences = await response.json();
-    renderExperiences();
+    shows = await response.json();
+    renderShows();
   } catch {
-    if (els.experiencesContainer) {
-      els.experiencesContainer.innerHTML =
-        '<p class="error-msg">No pudimos cargar las experiencias. Intentá de nuevo.</p>';
+    if (els.showsContainer) {
+      els.showsContainer.innerHTML =
+        '<p class="error-msg">No pudimos cargar los shows. Intentá de nuevo.</p>';
     }
   }
 }
 
-function renderExperiences() {
-  if (!els.experiencesContainer) return;
-  els.experiencesContainer.innerHTML = '';
+function renderShows() {
+  if (!els.showsContainer) return;
+  els.showsContainer.innerHTML = '';
 
-  experiences.forEach((exp) => {
+  shows.forEach((show) => {
     const article = document.createElement('article');
-    article.className = 'exp-card';
-    const isFeatured = exp.id === FEATURED_ID;
-    const durationHtml = exp.duration
-      ? `<span class="duration-pill">⏱ ${exp.duration}</span>`
-      : '';
+    article.className = 'show-card';
+    const previewIncludes = show.includes.slice(0, 3).map((i) => `<li>${i}</li>`).join('');
+    const moreCount = show.includes.length - 3;
 
     article.innerHTML = `
-      ${isFeatured ? '<span class="badge">Más elegido</span>' : ''}
-      <h3 class="exp-card__title">${exp.title}</h3>
-      ${durationHtml}
-      <p class="exp-card__tagline">${exp.tagline}</p>
-      <div class="exp-card__actions">
-        <a class="btn btn-primary" href="${buildWaUrl({ type: 'pkg', name: exp.title, duration: exp.duration })}" target="_blank" rel="noopener noreferrer">Reservar</a>
-        <button class="btn btn-secondary" type="button" data-exp-id="${exp.id}">Ver detalle</button>
+      ${show.featured ? '<span class="badge">Recomendado</span>' : ''}
+      <p class="show-card__meta">${show.meta}</p>
+      <h3 class="show-card__title">${show.title}</h3>
+      <p class="show-card__price">${show.price}</p>
+      <ul class="show-card__includes">${previewIncludes}${moreCount > 0 ? `<li class="show-card__more">+ ${moreCount} más</li>` : ''}</ul>
+      <div class="show-card__actions">
+        <a class="btn btn-primary" href="${buildWaUrl({ type: 'show', show })}" target="_blank" rel="noopener noreferrer">Consultar este show</a>
+        <button class="btn btn-secondary" type="button" data-show-id="${show.id}">Ver detalle</button>
       </div>
     `;
 
-    els.experiencesContainer.appendChild(article);
+    els.showsContainer.appendChild(article);
   });
 
-  els.experiencesContainer.querySelectorAll('[data-exp-id]').forEach((btn) => {
+  els.showsContainer.querySelectorAll('[data-show-id]').forEach((btn) => {
     btn.addEventListener('click', () => {
-      const exp = experiences.find((e) => e.id === btn.dataset.expId);
-      if (exp) openModal(exp);
+      const show = shows.find((s) => s.id === btn.dataset.showId);
+      if (show) openModal(show);
     });
   });
-}
-
-function createCarousel({ track, dotsContainer, prevBtn, nextBtn, slideSelector }) {
-  if (!track) return null;
-
-  const slides = track.querySelectorAll(slideSelector);
-  const count = slides.length;
-  if (count === 0) return null;
-
-  let index = 0;
-
-  function renderDots() {
-    if (!dotsContainer) return;
-    dotsContainer.innerHTML = '';
-    slides.forEach((_, i) => {
-      const dot = document.createElement('button');
-      dot.type = 'button';
-      dot.className = `carousel-dot${i === index ? ' is-active' : ''}`;
-      dot.setAttribute('aria-label', `Slide ${i + 1}`);
-      dot.setAttribute('role', 'tab');
-      dot.setAttribute('aria-selected', i === index ? 'true' : 'false');
-      dot.addEventListener('click', () => goTo(i));
-      dotsContainer.appendChild(dot);
-    });
-  }
-
-  function update() {
-    track.style.transform = `translateX(-${index * 100}%)`;
-    if (dotsContainer) {
-      dotsContainer.querySelectorAll('.carousel-dot').forEach((dot, i) => {
-        dot.classList.toggle('is-active', i === index);
-        dot.setAttribute('aria-selected', i === index ? 'true' : 'false');
-      });
-    }
-  }
-
-  function goTo(i) {
-    index = ((i % count) + count) % count;
-    update();
-  }
-
-  function next() {
-    goTo(index + 1);
-  }
-
-  function prev() {
-    goTo(index - 1);
-  }
-
-  if (prevBtn) prevBtn.addEventListener('click', prev);
-  if (nextBtn) nextBtn.addEventListener('click', next);
-  renderDots();
-  update();
-
-  let startX = 0;
-  let tracking = false;
-  const wrapper = track.parentElement;
-
-  wrapper.addEventListener(
-    'touchstart',
-    (e) => {
-      tracking = true;
-      startX = e.touches[0].clientX;
-    },
-    { passive: true }
-  );
-
-  wrapper.addEventListener(
-    'touchend',
-    (e) => {
-      if (!tracking) return;
-      tracking = false;
-      const delta = e.changedTouches[0].clientX - startX;
-      if (Math.abs(delta) > 40) {
-        if (delta < 0) next();
-        else prev();
-      }
-    },
-    { passive: true }
-  );
-
-  return { next, prev, goTo };
 }
 
 function updateActiveNav() {
@@ -324,29 +245,63 @@ function setupFabScroll() {
   observer.observe(hero);
 }
 
+function showFormError(message) {
+  if (!els.formError) return;
+  els.formError.textContent = message;
+  els.formError.hidden = false;
+}
+
+function clearFormError() {
+  if (!els.formError) return;
+  els.formError.textContent = '';
+  els.formError.hidden = true;
+}
+
 function handleFormSubmit(e) {
   e.preventDefault();
+  clearFormError();
+
   const name = document.getElementById('reserveName');
-  const email = document.getElementById('reserveEmail');
+  const date = document.getElementById('reserveDate');
+  const zone = document.getElementById('reserveZone');
+  const showField = document.getElementById('reserveShow');
+  const theme = document.getElementById('reserveTheme');
+  const kids = document.getElementById('reserveKids');
   const message = document.getElementById('reserveMessage');
 
-  let valid = true;
-  [name, email, message].forEach((field) => {
+  const required = [
+    { field: name, label: 'nombre' },
+    { field: date, label: 'fecha del evento' },
+    { field: zone, label: 'zona o barrio' },
+    { field: showField, label: 'show' },
+    { field: theme, label: 'personaje o temática' },
+  ];
+
+  let firstInvalid = null;
+  required.forEach(({ field, label }) => {
     if (!field.value.trim()) {
       field.setAttribute('aria-invalid', 'true');
-      valid = false;
+      if (!firstInvalid) firstInvalid = label;
     } else {
       field.removeAttribute('aria-invalid');
     }
   });
 
-  if (!valid) return;
+  if (firstInvalid) {
+    showFormError(`Completá ${firstInvalid === 'nombre' ? 'tu nombre' : 'el campo ' + firstInvalid} para enviar la consulta.`);
+    required.find(({ label }) => label === firstInvalid)?.field.focus();
+    return;
+  }
 
   const url = buildWaUrl({
     type: 'form',
     form: {
       name: name.value.trim(),
-      email: email.value.trim(),
+      date: date.value.trim(),
+      zone: zone.value.trim(),
+      show: showField.value.trim(),
+      theme: theme.value.trim(),
+      kids: kids.value.trim() || 'A confirmar',
       message: message.value.trim(),
     },
   });
@@ -359,8 +314,19 @@ function setupWaLinks() {
   if (els.drawerReserveBtn) els.drawerReserveBtn.href = generic;
   if (els.heroReserveBtn) els.heroReserveBtn.href = generic;
   if (els.fabWa) els.fabWa.href = generic;
-  if (els.videoReserveBtn) els.videoReserveBtn.href = buildWaUrl({ type: 'video' });
-  if (els.opinionBtn) els.opinionBtn.href = buildWaUrl({ type: 'opinion' });
+  if (els.characterBtn) els.characterBtn.href = buildWaUrl({ type: 'character' });
+  if (els.maquillajeBtn) els.maquillajeBtn.href = buildWaUrl({ type: 'maquillaje' });
+  if (els.instagramBtn) els.instagramBtn.href = INSTAGRAM_URL;
+  if (els.instagramBtnFooter) els.instagramBtnFooter.href = INSTAGRAM_URL;
+}
+
+function setupCharacterCards() {
+  document.querySelectorAll('[data-character]').forEach((card) => {
+    card.addEventListener('click', () => {
+      const character = card.dataset.character;
+      window.open(buildWaUrl({ type: 'character', character }), '_blank', 'noopener');
+    });
+  });
 }
 
 function checkLargeText() {
@@ -377,7 +343,8 @@ document.addEventListener('DOMContentLoaded', async () => {
   if (els.year) els.year.textContent = new Date().getFullYear();
 
   setupWaLinks();
-  await loadExperiences();
+  setupCharacterCards();
+  await loadShows();
 
   els.navToggle?.addEventListener('click', toggleNav);
   els.navClose?.addEventListener('click', closeNav);
@@ -393,22 +360,6 @@ document.addEventListener('DOMContentLoaded', async () => {
   });
 
   els.reserveForm?.addEventListener('submit', handleFormSubmit);
-
-  createCarousel({
-    track: els.galleryTrack,
-    dotsContainer: els.galleryDots,
-    prevBtn: els.galleryPrev,
-    nextBtn: els.galleryNext,
-    slideSelector: '.gallery-slide',
-  });
-
-  createCarousel({
-    track: els.testimonialsTrack,
-    dotsContainer: els.testimonialsDots,
-    prevBtn: null,
-    nextBtn: null,
-    slideSelector: '.testimonial',
-  });
 
   setupSmoothScroll();
   setupScrollReveal();

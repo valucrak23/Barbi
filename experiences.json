@@ -1,83 +1,77 @@
 [
   {
-    "id": "mini-hechizo",
-    "title": "Pack Mini Hechizo",
-    "duration": "20 min",
-    "tagline": "Toque especial y unico para tu celebracion.",
-    "activities": [
-      "Una princesa a eleccion llega con magia y encanto",
-      "Gran bienvenida a homenajeada/o e invitados",
-      "Interacciones en personaje: saludos, charlas y fotos",
-      "Vestuario y produccion premium",
-      "Presencia en el momento de la torta",
-      "Cancion de cumpleanos feliz",
-      "Fotos con familia e invitados"
+    "id": "1p-15",
+    "meta": "1 personaje · 15 minutos",
+    "title": "Presencia mágica",
+    "price": "$200.000",
+    "includes": [
+      "Bienvenida",
+      "Interacción en personaje",
+      "Fotos con invitados",
+      "Momento torta"
     ]
   },
   {
-    "id": "magia-estelar",
-    "title": "Pack Magia Estelar",
-    "duration": "60 min",
-    "tagline": "Recorrido encantador en eventos grandes.",
-    "activities": [
-      "Una o dos princesas a eleccion recorriendo el evento",
-      "Interacciones en personaje: saludos, charlas y fotos",
-      "Vestuario y produccion premium",
-      "Acompanamiento encantador"
+    "id": "1p-35",
+    "meta": "1 personaje · 35 minutos",
+    "title": "Show con historia, canto y baile",
+    "price": "$260.000",
+    "featured": true,
+    "includes": [
+      "Bienvenida",
+      "Interacción en personaje",
+      "Narración de la historia",
+      "Show en vivo con canto y baile participativo",
+      "Entrega de regalo al homenajeado",
+      "Fotos con invitados",
+      "Momento torta",
+      "Sonido profesional: parlante, micrófonos y sonidista"
     ]
   },
   {
-    "id": "sueno-princesa",
-    "title": "Pack Sueño de Princesa",
-    "duration": "40 min",
-    "tagline": "Show interactivo y artistico con canto en vivo.",
-    "activities": [
-      "Una princesa a eleccion",
-      "Gran bienvenida",
-      "Vestuario y produccion premium",
-      "Cuento de hadas en primera persona",
-      "Canto en vivo y participacion de los chicos",
-      "Interacciones en personaje: saludos, charlas y fotos",
-      "Momento de la torta y coronacion final"
+    "id": "2p-20",
+    "meta": "2 personajes · 20 minutos",
+    "title": "Doble presencia mágica",
+    "price": "$300.000",
+    "includes": [
+      "Bienvenida",
+      "Interacción en personaje",
+      "Fotos con invitados",
+      "Momento torta"
     ]
   },
   {
-    "id": "reino-magico",
-    "title": "Pack Reino Magico",
-    "duration": "55 min",
-    "tagline": "Experiencia completa con dos princesas.",
-    "activities": [
-      "Dos princesas a eleccion",
-      "Gran bienvenida",
-      "Vestuario y produccion premium",
-      "Cuento de hadas en primera persona",
-      "Canto en vivo y participacion",
-      "Interacciones en personaje: saludos, charlas y fotos",
-      "Momento de la torta y coronacion final"
+    "id": "2p-45",
+    "meta": "2 personajes · 45 minutos",
+    "title": "Show especial con dos personajes",
+    "price": "$380.000",
+    "includes": [
+      "Bienvenida especial de los personajes",
+      "Canciones cantadas en vivo",
+      "Baile interactivo",
+      "Momento de firmas",
+      "Coronación",
+      "Regalo especial para el homenajeado",
+      "Fotos con invitados",
+      "Momento torta",
+      "Sonido profesional: parlante, micrófonos y sonidista"
     ]
   },
   {
-    "id": "reina-del-hielo",
-    "title": "Show La Reina del Hielo",
-    "duration": "60 min",
-    "tagline": "Experiencia grupal unica del mundo congelado.",
-    "activities": [
-      "Elsa, Anna, Olaf y Kristoff en escena",
-      "Show recreando momentos inolvidables de la pelicula",
-      "Momento de la torta con los personajes",
-      "Interacciones: saludos, charlas y fotos"
+    "id": "3p-45",
+    "meta": "3 personajes · 45 minutos",
+    "title": "Show completo con tres personajes",
+    "price": "$430.000",
+    "includes": [
+      "Bienvenida especial de los personajes",
+      "Show con coreografías y canciones cantadas en vivo",
+      "Baile y juegos interactivos",
+      "Momento de firmas",
+      "Coronación",
+      "Regalo especial para el homenajeado",
+      "Fotos con invitados",
+      "Momento torta",
+      "Sonido profesional: parlante, micrófonos y sonidista"
     ]
-  },
-  {
-    "id": "mensaje-magico",
-    "title": "Mensaje Magico",
-    "duration": "",
-    "tagline": "Video personalizado con dedicatoria especial.",
-    "activities": [
-      "Video personalizado de la princesa elegida",
-      "Mensaje con nombre y dedicatoria especial",
-      "Saludo magico lleno de dulzura"
-    ],
-    "extra": "Ideal para distancias o como complemento de un regalo"
   }
 ]
