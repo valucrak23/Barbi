@@ -1,0 +1,187 @@
+/**
+ * Princess Club Web 2.0 — Design Tokens
+ * Copiar a styles.css o importar: @import 'tokens.css';
+ * Carpeta destino dev: PrincessClubWeb/css/
+ */
+
+:root {
+  /* ── Colores de marca (NO modificar) ── */
+  --color-soft: #aebae1;
+  --color-accent: #ae8bbf;
+  --color-bg: #f9f4fd;
+  --color-white: #ffffff;
+  --color-dark: #124e78;
+
+  /* Derivados semánticos */
+  --color-text-primary: var(--color-accent);
+  --color-text-body: var(--color-dark);
+  --color-text-muted: rgba(18, 78, 120, 0.65);
+  --color-text-on-soft: var(--color-white);
+  --color-text-on-accent: var(--color-white);
+  --color-link: var(--color-dark);
+  --color-link-hover: var(--color-accent);
+  --color-border: var(--color-soft);
+  --color-border-subtle: rgba(174, 186, 225, 0.45);
+  --color-overlay: rgba(18, 78, 120, 0.35);
+  --color-overlay-nav: rgba(249, 244, 253, 0.92);
+  --color-success: #5a9e6f;
+  --color-badge-bg: var(--color-accent);
+  --color-badge-text: var(--color-white);
+  --color-star: #e8b84a;
+
+  /* Gradientes */
+  --gradient-brand: linear-gradient(135deg, var(--color-soft) 0%, var(--color-accent) 100%);
+  --gradient-hero-overlay: linear-gradient(180deg, rgba(249, 244, 253, 0) 0%, rgba(249, 244, 253, 0.85) 100%);
+
+  /* ── Tipografía ── */
+  --font-body: 'Garet', system-ui, sans-serif;
+  --font-heading: 'Bright Retro', Georgia, serif;
+  --font-display: 'Sour Gummy', cursive;
+
+  /* Escala mobile (360px base) */
+  --text-xs: 0.75rem;    /* 12px */
+  --text-sm: 0.875rem;   /* 14px */
+  --text-base: 1rem;     /* 16px */
+  --text-md: 1.125rem;   /* 18px — cuerpo default v1 */
+  --text-lg: 1.25rem;    /* 20px */
+  --text-xl: 1.5rem;     /* 24px — H3 mobile */
+  --text-2xl: 1.75rem;   /* 28px — H2 mobile */
+  --text-3xl: 2rem;      /* 32px — H1 mobile */
+  --text-4xl: 2.5rem;    /* 40px — H1 desktop */
+
+  --leading-tight: 1.2;
+  --leading-snug: 1.35;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.65;
+
+  --weight-regular: 400;
+  --weight-bold: 700;
+  --weight-display: 900;
+
+  /* ── Spacing (base 4px) ── */
+  --space-1: 0.25rem;   /* 4px */
+  --space-2: 0.5rem;    /* 8px */
+  --space-3: 0.75rem;   /* 12px */
+  --space-4: 1rem;      /* 16px */
+  --space-5: 1.25rem;   /* 20px */
+  --space-6: 1.5rem;    /* 24px */
+  --space-8: 2rem;      /* 32px */
+  --space-10: 2.5rem;   /* 40px */
+  --space-12: 3rem;     /* 48px */
+  --space-16: 4rem;     /* 64px */
+  --space-20: 5rem;     /* 80px */
+
+  /* Aliases semánticos */
+  --section-py-mobile: var(--space-12);
+  --section-py-desktop: var(--space-20);
+  --container-px: var(--space-4);
+  --gap-grid: var(--space-4);
+  --gap-cards: var(--space-4);
+  --gap-inline: var(--space-3);
+
+  /* ── Layout ── */
+  --container-max: 1100px;
+  --container-wide: 1200px;
+  --header-height-mobile: 64px;
+  --header-height-desktop: 80px;
+  --fab-size: 56px;
+  --fab-offset: var(--space-4);
+  --fab-safe-bottom: calc(var(--fab-size) + var(--space-8));
+
+  /* ── Border radius ── */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  /* ── Sombras (suaves, "mágicas") ── */
+  --shadow-xs: 0 1px 2px rgba(174, 139, 191, 0.08);
+  --shadow-sm: 0 2px 8px rgba(174, 139, 191, 0.1);
+  --shadow-md: 0 4px 16px rgba(174, 139, 191, 0.14);
+  --shadow-lg: 0 8px 32px rgba(174, 139, 191, 0.18);
+  --shadow-card: 0 2px 12px rgba(174, 186, 225, 0.2);
+  --shadow-card-hover: 0 6px 24px rgba(174, 139, 191, 0.22);
+  --shadow-modal: 0 16px 48px rgba(18, 78, 120, 0.15);
+  --shadow-fab: 0 4px 20px rgba(18, 78, 120, 0.25);
+
+  /* ── Z-index stack ── */
+  --z-base: 1;
+  --z-decor: 0;
+  --z-header: 1000;
+  --z-drawer: 1050;
+  --z-drawer-backdrop: 1040;
+  --z-fab: 1030;
+  --z-modal: 1100;
+  --z-skip: 1200;
+
+  /* ── Transiciones ── */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --duration-fast: 150ms;
+  --duration-normal: 250ms;
+  --duration-slow: 400ms;
+  --duration-reveal: 600ms;
+
+  /* ── Pattern decorativo ── */
+  --pattern-opacity-subtle: 0.03;
+  --pattern-opacity-light: 0.05;
+  --pattern-size: 200px;
+
+  /* ── Touch & a11y ── */
+  --touch-min: 44px;
+  --focus-ring: 2px solid var(--color-accent);
+  --focus-offset: 2px;
+
+  /* ── Componentes: Botones ── */
+  --btn-py: 12px;
+  --btn-px: 20px;
+  --btn-font-size: var(--text-base);
+  --btn-radius: var(--radius-sm);
+  --btn-gap: var(--space-2);
+
+  /* ── Componentes: Cards ── */
+  --card-padding: var(--space-4);
+  --card-radius: var(--radius-md);
+  --card-border: 1px solid var(--color-border);
+
+  /* ── Componentes: Inputs ── */
+  --input-py: 12px;
+  --input-px: 14px;
+  --input-radius: var(--radius-sm);
+  --input-border: 1px solid var(--color-border);
+
+  /* ── Componentes: Modal ── */
+  --modal-max-width: 560px;
+  --modal-padding: var(--space-4);
+  --modal-radius: var(--radius-lg);
+
+  /* ── Breakpoints (referencia — usar en @media) ── */
+  /* --bp-mobile: 360px;   default, mobile-first */
+  /* --bp-tablet: 600px; */
+  /* --bp-desktop: 900px; */
+  /* --bp-wide: 1280px; */
+}
+
+/* Escala tipográfica desktop */
+@media (min-width: 900px) {
+  :root {
+    --text-3xl: 2.5rem;
+    --text-2xl: 2rem;
+    --text-xl: 1.75rem;
+    --container-px: var(--space-6);
+    --gap-grid: var(--space-6);
+    --gap-cards: var(--space-6);
+    --card-padding: var(--space-6);
+  }
+}
+
+/* prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-fast: 0ms;
+    --duration-normal: 0ms;
+    --duration-slow: 0ms;
+    --duration-reveal: 0ms;
+  }
+}

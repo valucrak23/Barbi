@@ -1,0 +1,37 @@
+[build]
+  publish = "."
+
+# Sitio productivo en la raíz (v2). Excluir carpetas que no van al deploy.
+[build.environment]
+  NODE_VERSION = "20"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/fonts/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
+# Redirigir la ruta de desarrollo al sitio principal
+[[redirects]]
+  from = "/PrincessClubWeb"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/PrincessClubWeb/"
+  to = "/"
+  status = 301

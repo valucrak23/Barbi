@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Princess Club 2.0 — Mockups High-Fidelity</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sour+Gummy:wght@400;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <style>
+    @font-face {
+      font-family: 'Garet';
+      src: url('../../fonts/Garet-Book.woff2') format('woff2'), url('../../fonts/Garet-Book.ttf') format('truetype');
+      font-weight: 400; font-display: swap;
+    }
+    @font-face {
+      font-family: 'Garet';
+      src: url('../../fonts/Garet-Heavy.woff2') format('woff2'), url('../../fonts/Garet-Heavy.ttf') format('truetype');
+      font-weight: 700; font-display: swap;
+    }
+    @font-face {
+      font-family: 'Bright Retro';
+      src: url('../../fonts/Bright DEMO.otf') format('opentype');
+      font-weight: 400; font-display: swap;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--font-body);
+      background: #e8e0f0;
+      color: var(--color-dark);
+      padding: var(--space-6);
+    }
+
+    .mockup-page-title {
+      font-family: var(--font-heading);
+      font-size: var(--text-2xl);
+      color: var(--color-accent);
+      text-align: center;
+      margin-bottom: var(--space-2);
+    }
+    .mockup-page-sub {
+      text-align: center;
+      color: var(--color-text-muted);
+      margin-bottom: var(--space-10);
+      font-size: var(--text-sm);
+    }
+
+    .mockup-section {
+      max-width: 420px;
+      margin: 0 auto var(--space-12);
+    }
+    .mockup-label {
+      font-size: var(--text-xs);
+      font-weight: var(--weight-bold);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--color-accent);
+      margin-bottom: var(--space-3);
+    }
+    .mockup-frame {
+      background: var(--color-bg);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid var(--color-border-subtle);
+    }
+
+    /* ── HERO ── */
+    .hero-mock {
+      padding: var(--space-6) var(--space-4) 0;
+      background: var(--color-bg);
+      position: relative;
+    }
+    .hero-mock::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('../../assets/para-usar/pattern.png') center/200px;
+      opacity: var(--pattern-opacity-subtle);
+      pointer-events: none;
+    }
+    .hero-mock > * { position: relative; }
+    .hero-mock h1 {
+      font-family: var(--font-heading);
+      font-size: var(--text-3xl);
+      line-height: var(--leading-tight);
+      color: var(--color-dark);
+      margin-bottom: var(--space-3);
+    }
+    .hero-mock .sub {
+      font-size: var(--text-md);
+      color: var(--color-accent);
+      margin-bottom: var(--space-3);
+      line-height: var(--leading-snug);
+    }
+    .hero-mock .body {
+      font-size: var(--text-base);
+      line-height: var(--leading-normal);
+      margin-bottom: var(--space-5);
+    }
+    .hero-ctas {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2);
+      margin-bottom: var(--space-6);
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: var(--touch-min);
+      padding: var(--btn-py) var(--btn-px);
+      font-family: var(--font-body);
+      font-weight: var(--weight-bold);
+      font-size: var(--btn-font-size);
+      border-radius: var(--btn-radius);
+      border: 1px solid transparent;
+      cursor: pointer;
+      text-decoration: none;
+      transition: filter var(--duration-fast), transform var(--duration-fast);
+    }
+    .btn-primary {
+      background: var(--color-soft);
+      color: var(--color-white);
+      border-color: var(--color-soft);
+    }
+    .btn-secondary {
+      background: var(--color-white);
+      color: var(--color-dark);
+      border-color: var(--color-soft);
+    }
+    .btn:hover { filter: brightness(0.95); }
+    .hero-visual {
+      width: 100%;
+      height: 220px;
+      background: linear-gradient(135deg, rgba(174,186,225,0.3), rgba(174,139,191,0.3)),
+                  url('../../assets/default.jpg') center/cover;
+      border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding-bottom: var(--space-3);
+    }
+    .hero-visual span {
+      font-size: var(--text-xs);
+      color: var(--color-white);
+      background: rgba(18,78,120,0.5);
+      padding: 4px 10px;
+      border-radius: var(--radius-full);
+    }
+
+    /* ── EXP CARD ── */
+    .card-mock { padding: var(--space-4); }
+    .exp-card {
+      background: var(--color-white);
+      border: var(--card-border);
+      border-radius: var(--card-radius);
+      padding: var(--card-padding);
+      box-shadow: var(--shadow-card);
+      position: relative;
+    }
+    .badge {
+      display: inline-block;
+      padding: 4px 10px;
+      font-family: var(--font-display);
+      font-weight: var(--weight-display);
+      font-size: var(--text-xs);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--color-badge-text);
+      background: var(--color-badge-bg);
+      border-radius: var(--radius-full);
+      margin-bottom: var(--space-2);
+    }
+    .exp-card h3 {
+      font-family: var(--font-display);
+      font-size: 28px;
+      color: var(--color-accent);
+      margin-bottom: var(--space-2);
+      line-height: var(--leading-tight);
+    }
+    .duration-pill {
+      display: inline-block;
+      padding: 4px 12px;
+      background: rgba(174,186,225,0.25);
+      border-radius: var(--radius-full);
+      font-family: var(--font-display);
+      font-weight: var(--weight-display);
+      font-size: var(--text-sm);
+      color: var(--color-soft);
+      margin-bottom: var(--space-3);
+    }
+    .exp-card .tagline {
+      font-size: var(--text-base);
+      margin-bottom: var(--space-4);
+      line-height: var(--leading-normal);
+    }
+    .card-actions {
+      display: flex;
+      gap: var(--space-2);
+    }
+    .card-actions .btn { flex: 1; font-size: var(--text-sm); padding: 10px 12px; }
+
+    /* ── MODAL ── */
+    .modal-mock-wrap {
+      background: var(--color-overlay);
+      padding: var(--space-6) var(--space-4);
+      position: relative;
+    }
+    .modal-dialog {
+      background: var(--color-white);
+      border-radius: var(--modal-radius);
+      box-shadow: var(--shadow-modal);
+      overflow: hidden;
+      max-width: 360px;
+      margin: 0 auto;
+    }
+    .modal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: var(--space-3) var(--space-4);
+      border-bottom: 1px solid var(--color-border);
+    }
+    .modal-header h3 {
+      font-family: var(--font-display);
+      font-size: 22px;
+      color: var(--color-accent);
+    }
+    .modal-close {
+      width: 36px; height: 36px;
+      border: none; background: var(--color-bg);
+      border-radius: var(--radius-full);
+      cursor: pointer;
+      font-size: 18px;
+      color: var(--color-dark);
+    }
+    .modal-body {
+      padding: var(--space-4);
+      position: relative;
+    }
+    .modal-body::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('../../assets/para-usar/pattern.png') center/200px;
+      opacity: 0.04;
+      pointer-events: none;
+    }
+    .modal-body > * { position: relative; }
+    .modal-duration {
+      font-family: var(--font-display);
+      font-weight: var(--weight-display);
+      font-size: var(--text-lg);
+      color: var(--color-soft);
+      margin-bottom: var(--space-4);
+    }
+    .modal-body ul {
+      list-style: none;
+      padding: 0;
+    }
+    .modal-body li {
+      padding-left: 40px;
+      margin-bottom: var(--space-2);
+      font-size: var(--text-sm);
+      line-height: var(--leading-snug);
+      background: url('../../assets/para-usar/elementos_Princesas.png') left center/28px no-repeat;
+    }
+    .modal-footer {
+      padding: var(--space-3) var(--space-4);
+      border-top: 1px solid var(--color-border);
+    }
+    .modal-footer .btn { width: 100%; }
+
+    /* ── FAQ ── */
+    .faq-mock { padding: var(--space-4); }
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      font-family: var(--font-heading);
+      font-size: var(--text-2xl);
+      color: var(--color-dark);
+      margin-bottom: var(--space-5);
+    }
+    .section-icon { width: 44px; height: auto; }
+    .accordion-item {
+      background: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      margin-bottom: var(--space-2);
+      overflow: hidden;
+    }
+    .accordion-item[open] {
+      border-left: 3px solid var(--color-accent);
+    }
+    .accordion-summary {
+      min-height: var(--touch-min);
+      padding: 12px 16px;
+      font-weight: var(--weight-bold);
+      font-size: var(--text-base);
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .accordion-summary::-webkit-details-marker { display: none; }
+    .accordion-summary::after {
+      content: '▼';
+      font-size: 10px;
+      color: var(--color-soft);
+      transition: transform var(--duration-fast);
+    }
+    .accordion-item:not([open]) .accordion-summary::after {
+      content: '▶';
+    }
+    .accordion-panel {
+      padding: 0 16px 16px;
+      font-size: var(--text-sm);
+      line-height: var(--leading-relaxed);
+      color: var(--color-text-muted);
+    }
+
+    @media (min-width: 900px) {
+      .mockups-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-8);
+        max-width: 900px;
+        margin: 0 auto;
+      }
+      .mockup-section { max-width: none; margin-bottom: 0; }
+      .mockup-section--full { grid-column: 1 / -1; max-width: 420px; margin: 0 auto; }
+    }
+  </style>
+</head>
+<body>
+  <h1 class="mockup-page-title">Princess Club Web 2.0</h1>
+  <p class="mockup-page-sub">Mockups high-fidelity — Hero · Card · Modal · FAQ</p>
+
+  <div class="mockups-grid">
+    <!-- HERO -->
+    <section class="mockup-section">
+      <p class="mockup-label">01 — Hero (mobile 360px)</p>
+      <div class="mockup-frame">
+        <div class="hero-mock">
+          <h1>La magia llega a tu fiesta</h1>
+          <p class="sub">Shows de princesas profesionales en CABA para cumpleaños y eventos especiales.</p>
+          <p class="body">Más de 3 años creando momentos inolvidables con actrices especializadas y vestuario premium.</p>
+          <div class="hero-ctas">
+            <a class="btn btn-primary" href="#">Reservar ahora</a>
+            <a class="btn btn-secondary" href="#">Ver experiencias</a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <span>Placeholder — foto show real</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXP CARD -->
+    <section class="mockup-section">
+      <p class="mockup-label">02 — Card de experiencia</p>
+      <div class="mockup-frame card-mock">
+        <article class="exp-card">
+          <span class="badge">Más elegido</span>
+          <h3>Pack Sueño de Princesa</h3>
+          <span class="duration-pill">⏱ 40 min</span>
+          <p class="tagline">Show interactivo y artístico con canto en vivo.</p>
+          <div class="card-actions">
+            <a class="btn btn-primary" href="#">Reservar</a>
+            <a class="btn btn-secondary" href="#">Ver detalle</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- MODAL -->
+    <section class="mockup-section mockup-section--full">
+      <p class="mockup-label">03 — Modal de detalle</p>
+      <div class="mockup-frame">
+        <div class="modal-mock-wrap">
+          <div class="modal-dialog" role="dialog" aria-labelledby="modal-title">
+            <div class="modal-header">
+              <h3 id="modal-title">Pack Sueño de Princesa</h3>
+              <button class="modal-close" aria-label="Cerrar">✕</button>
+            </div>
+            <div class="modal-body">
+              <p class="modal-duration">Duración: 40 min</p>
+              <ul>
+                <li>Una princesa a elección</li>
+                <li>Gran bienvenida</li>
+                <li>Cuento de hadas en primera persona</li>
+                <li>Canto en vivo y participación de los chicos</li>
+                <li>Momento de la torta y coronación final</li>
+              </ul>
+            </div>
+            <div class="modal-footer">
+              <a class="btn btn-primary" href="#">Reservar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="mockup-section mockup-section--full">
+      <p class="mockup-label">04 — FAQ Accordion</p>
+      <div class="mockup-frame faq-mock">
+        <h2 class="section-title">
+          <img src="../../assets/para-usar/preguntas.png" alt="" class="section-icon">
+          Preguntas frecuentes
+        </h2>
+        <details class="accordion-item" open>
+          <summary class="accordion-summary">¿Desde qué edad recomiendan los shows?</summary>
+          <div class="accordion-panel">
+            Nuestros shows están pensados para chicos de 3 años en adelante. Adaptamos las actividades según la edad del grupo.
+          </div>
+        </details>
+        <details class="accordion-item">
+          <summary class="accordion-summary">¿Cubren toda CABA? ¿Hay costo de traslado?</summary>
+          <div class="accordion-panel">
+            Sí, trabajamos en CABA. El traslado está incluido dentro de la Ciudad.
+          </div>
+        </details>
+        <details class="accordion-item">
+          <summary class="accordion-summary">¿Puedo elegir la princesa?</summary>
+          <div class="accordion-panel">
+            ¡Sí! Podés elegir entre nuestras princesas disponibles según la fecha de tu evento.
+          </div>
+        </details>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

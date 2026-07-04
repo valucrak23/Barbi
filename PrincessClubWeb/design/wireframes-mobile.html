@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=360">
+  <title>Wireframes Mobile 360px — Princess Club 2.0</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #1a1a2e;
+      font-family: system-ui, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 24px 16px;
+      gap: 32px;
+    }
+    .page-header {
+      color: #fff;
+      text-align: center;
+      max-width: 360px;
+    }
+    .page-header h1 { font-size: 18px; margin-bottom: 4px; }
+    .page-header p { font-size: 12px; color: #888; }
+
+    .wireframe {
+      width: 360px;
+      background: #f5f5f5;
+      border: 2px solid #333;
+      font-size: 11px;
+      color: #333;
+    }
+
+    .wf-block {
+      border-bottom: 1px dashed #999;
+      position: relative;
+    }
+    .wf-label {
+      position: absolute;
+      top: 4px;
+      right: 4px;
+      font-size: 9px;
+      color: #666;
+      background: rgba(255,255,255,0.8);
+      padding: 1px 4px;
+    }
+
+    /* Header */
+    .wf-header {
+      height: 64px;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 12px;
+      border-bottom: 2px solid #333;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .wf-logo { width: 40px; height: 28px; background: #ccc; border: 1px solid #999; }
+    .wf-header-actions { display: flex; gap: 8px; align-items: center; }
+    .wf-hamburger { width: 44px; height: 44px; background: #ddd; border: 1px solid #999; display: grid; place-items: center; }
+    .wf-cta-sm { height: 36px; min-width: 72px; background: #aebae1; color: #fff; border: none; font-size: 10px; font-weight: bold; }
+
+    /* Hero */
+    .wf-hero { padding: 16px; background: #f9f4fd; }
+    .wf-h1 { height: 48px; background: #ddd; margin-bottom: 8px; border: 1px solid #bbb; }
+    .wf-h1::after { content: 'H1 — La magia llega a tu fiesta'; display: block; padding: 8px; font-weight: bold; }
+    .wf-line { height: 14px; background: #e0e0e0; margin-bottom: 6px; border: 1px solid #ccc; }
+    .wf-line.short { width: 80%; }
+    .wf-btns { display: flex; flex-direction: column; gap: 8px; margin: 12px 0; }
+    .wf-btn { height: 44px; background: #aebae1; display: grid; place-items: center; color: #fff; font-weight: bold; border: 1px solid #999; }
+    .wf-btn.sec { background: #fff; color: #333; }
+    .wf-img { height: 200px; background: repeating-linear-gradient(45deg, #ddd, #ddd 10px, #ccc 10px, #ccc 20px); display: grid; place-items: center; color: #666; font-size: 10px; }
+
+    /* Trust */
+    .wf-trust { padding: 12px; display: flex; gap: 16px; overflow-x: auto; background: #fff; }
+    .wf-trust-item { flex: 0 0 72px; text-align: center; }
+    .wf-trust-icon { width: 24px; height: 24px; background: #aebae1; border-radius: 50%; margin: 0 auto 4px; }
+    .wf-trust-label { font-size: 9px; }
+
+    /* Section */
+    .wf-section { padding: 24px 16px; background: #fff; }
+    .wf-section.alt { background: #f0eef5; }
+    .wf-section-title { height: 32px; background: #ddd; margin-bottom: 12px; border: 1px solid #bbb; display: flex; align-items: center; padding-left: 8px; font-weight: bold; }
+    .wf-card { border: 1px solid #999; padding: 12px; margin-bottom: 8px; background: #fff; }
+    .wf-card-title { height: 20px; background: #e8dff0; margin-bottom: 6px; }
+    .wf-card-meta { height: 14px; width: 60px; background: #aebae1; border-radius: 10px; margin-bottom: 6px; }
+    .wf-card-btns { display: flex; gap: 6px; margin-top: 8px; }
+    .wf-card-btns div { flex: 1; height: 36px; background: #ddd; border: 1px solid #999; display: grid; place-items: center; font-size: 9px; }
+
+    /* Steps */
+    .wf-steps { display: flex; flex-direction: column; gap: 16px; }
+    .wf-step { display: flex; gap: 12px; align-items: flex-start; }
+    .wf-step-num { width: 40px; height: 40px; background: #aebae1; border-radius: 50%; flex-shrink: 0; display: grid; place-items: center; color: #fff; font-weight: bold; }
+    .wf-step-text { flex: 1; }
+    .wf-step-text .wf-line { margin-bottom: 4px; }
+
+    /* Video block */
+    .wf-video { margin: 0 16px 24px; padding: 32px 16px; background: linear-gradient(135deg, #aebae1, #ae8bbf); border-radius: 12px; text-align: center; color: #fff; }
+    .wf-video-icon { font-size: 32px; margin-bottom: 8px; }
+
+    /* Testimonial */
+    .wf-testimonial { border: 1px solid #999; padding: 16px; background: #fff; text-align: center; }
+    .wf-stars { color: #e8b84a; margin: 8px 0; }
+
+    /* FAQ */
+    .wf-faq-item { border: 1px solid #999; margin-bottom: 6px; background: #fff; }
+    .wf-faq-q { padding: 12px; font-weight: bold; background: #f5f5f5; min-height: 44px; display: flex; align-items: center; }
+    .wf-faq-a { padding: 12px; background: #fff; border-top: 1px dashed #ccc; }
+    .wf-faq-item.closed .wf-faq-a { display: none; }
+
+    /* Form */
+    .wf-field { margin-bottom: 10px; }
+    .wf-field label { display: block; font-size: 10px; margin-bottom: 4px; font-weight: bold; }
+    .wf-field input, .wf-field textarea { width: 100%; height: 44px; border: 1px solid #999; background: #fff; }
+    .wf-field textarea { height: 80px; }
+
+    /* Footer */
+    .wf-footer { padding: 24px 16px; background: #fff; text-align: center; border-top: 2px solid #333; }
+    .wf-footer-logo { width: 50px; height: 36px; background: #ccc; margin: 0 auto 8px; }
+    .wf-footer-links { display: flex; justify-content: center; gap: 16px; margin: 8px 0; font-size: 10px; }
+
+    /* FAB */
+    .wf-fab {
+      position: fixed;
+      bottom: 16px;
+      right: calc(50% - 180px + 16px);
+      width: 56px;
+      height: 56px;
+      background: #25D366;
+      border-radius: 50%;
+      border: 2px solid #fff;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      display: grid;
+      place-items: center;
+      color: #fff;
+      font-size: 10px;
+      font-weight: bold;
+      z-index: 100;
+    }
+
+    @media (max-width: 400px) {
+      .wf-fab { right: 16px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-header">
+    <h1>Wireframes Mobile — 360px</h1>
+    <p>Princess Club Web 2.0 · Flujo completo top → bottom</p>
+  </div>
+
+  <div class="wireframe" id="wireframe">
+    <!-- HEADER -->
+    <div class="wf-block">
+      <header class="wf-header">
+        <div class="wf-logo"></div>
+        <div class="wf-header-actions">
+          <div class="wf-hamburger">≡</div>
+          <button class="wf-cta-sm">Reservar</button>
+        </div>
+      </header>
+      <span class="wf-label">64px sticky</span>
+    </div>
+
+    <!-- HERO -->
+    <div class="wf-block wf-hero">
+      <div class="wf-h1"></div>
+      <div class="wf-line"></div>
+      <div class="wf-line short"></div>
+      <div class="wf-btns">
+        <div class="wf-btn">Reservar ahora</div>
+        <div class="wf-btn sec">Ver experiencias</div>
+      </div>
+      <div class="wf-img">▓ HERO IMAGE 240px ▓</div>
+      <span class="wf-label">Hero ~520px</span>
+    </div>
+
+    <!-- TRUST -->
+    <div class="wf-block">
+      <div class="wf-trust">
+        <div class="wf-trust-item"><div class="wf-trust-icon"></div><div class="wf-trust-label">+3 años</div></div>
+        <div class="wf-trust-item"><div class="wf-trust-icon"></div><div class="wf-trust-label">CABA</div></div>
+        <div class="wf-trust-item"><div class="wf-trust-icon"></div><div class="wf-trust-label">Actrices</div></div>
+        <div class="wf-trust-item"><div class="wf-trust-icon"></div><div class="wf-trust-label">Seguro</div></div>
+      </div>
+      <span class="wf-label">Trust bar 72px</span>
+    </div>
+
+    <!-- QUIENES -->
+    <div class="wf-block wf-section alt">
+      <div class="wf-section-title">◆ Quienes somos</div>
+      <div class="wf-line"></div>
+      <div class="wf-line"></div>
+      <div class="wf-line short"></div>
+      <div class="wf-img" style="height:180px;margin-top:12px;border-radius:8px;">▓ GALLERY SWIPE ▓</div>
+      <div style="text-align:center;margin-top:8px;">● ○ ○ ○</div>
+      <span class="wf-label">Quienes ~380px</span>
+    </div>
+
+    <!-- EXPERIENCIAS -->
+    <div class="wf-block wf-section">
+      <div class="wf-section-title">◆ Catálogo de Experiencias</div>
+      <div class="wf-card">
+        <div style="font-size:9px;background:#ae8bbf;color:#fff;display:inline-block;padding:2px 6px;border-radius:8px;margin-bottom:4px;">Más elegido</div>
+        <div class="wf-card-title"></div>
+        <div class="wf-card-meta"></div>
+        <div class="wf-line short"></div>
+        <div class="wf-card-btns"><div>Reservar</div><div>Ver detalle</div></div>
+      </div>
+      <div class="wf-card"><div class="wf-card-title"></div><div class="wf-card-meta"></div><div class="wf-line short"></div><div class="wf-card-btns"><div>Reservar</div><div>Ver detalle</div></div></div>
+      <div class="wf-card"><div class="wf-card-title"></div><div class="wf-card-meta"></div><div class="wf-line short"></div><div class="wf-card-btns"><div>Reservar</div><div>Ver detalle</div></div></div>
+      <p style="text-align:center;color:#999;margin-top:8px;">× 6 cards total</p>
+      <span class="wf-label">Experiencias</span>
+    </div>
+
+    <!-- COMO FUNCIONA -->
+    <div class="wf-block wf-section alt">
+      <div class="wf-section-title">◆ Cómo funciona</div>
+      <div class="wf-steps">
+        <div class="wf-step"><div class="wf-step-num">1</div><div class="wf-step-text"><div class="wf-line"></div><div class="wf-line short"></div></div></div>
+        <div class="wf-step"><div class="wf-step-num">2</div><div class="wf-step-text"><div class="wf-line"></div><div class="wf-line short"></div></div></div>
+        <div class="wf-step"><div class="wf-step-num">3</div><div class="wf-step-text"><div class="wf-line"></div><div class="wf-line short"></div></div></div>
+      </div>
+      <span class="wf-label">Cómo funciona</span>
+    </div>
+
+    <!-- VIDEO -->
+    <div class="wf-block">
+      <div class="wf-video">
+        <div class="wf-video-icon">🎥</div>
+        <div style="font-weight:bold;margin-bottom:4px;">Video personalizado</div>
+        <div style="font-size:10px;margin-bottom:12px;">Copy aspiracional</div>
+        <div class="wf-btn" style="height:40px;margin:0 auto;max-width:200px;">Reservar Video</div>
+      </div>
+      <span class="wf-label">Video</span>
+    </div>
+
+    <!-- TESTIMONIOS -->
+    <div class="wf-block wf-section">
+      <div class="wf-section-title">◆ Lo que dicen las familias</div>
+      <div class="wf-testimonial">
+        <div style="font-size:20px;color:#ae8bbf;">"</div>
+        <div class="wf-line"></div>
+        <div class="wf-line"></div>
+        <div class="wf-stars">★★★★★</div>
+        <div style="font-size:10px;">María, mamá de Sofía</div>
+      </div>
+      <div style="text-align:center;margin:8px 0;">○ ● ○</div>
+      <div class="wf-btn sec" style="margin-top:8px;">Dejar tu opinión</div>
+      <span class="wf-label">Testimonios</span>
+    </div>
+
+    <!-- FAQ -->
+    <div class="wf-block wf-section alt">
+      <div class="wf-section-title">◆ Preguntas frecuentes</div>
+      <div class="wf-faq-item">
+        <div class="wf-faq-q">▼ ¿Desde qué edad...? (abierto)</div>
+        <div class="wf-faq-a"><div class="wf-line"></div><div class="wf-line short"></div></div>
+      </div>
+      <div class="wf-faq-item closed">
+        <div class="wf-faq-q">▶ ¿Cubren toda CABA?</div>
+        <div class="wf-faq-a"></div>
+      </div>
+      <div class="wf-faq-item closed">
+        <div class="wf-faq-q">▶ ¿Cuánto tiempo antes...?</div>
+        <div class="wf-faq-a"></div>
+      </div>
+      <p style="text-align:center;color:#999;margin-top:8px;">× 8 preguntas</p>
+      <span class="wf-label">FAQ</span>
+    </div>
+
+    <!-- RESERVA -->
+    <div class="wf-block wf-section">
+      <div class="wf-section-title">◆ Reservá tu magia</div>
+      <div class="wf-field"><label>Nombre</label><input type="text" readonly></div>
+      <div class="wf-field"><label>Email</label><input type="email" readonly></div>
+      <div class="wf-field"><label>Mensaje</label><textarea readonly></textarea></div>
+      <div class="wf-btn">Reservar</div>
+      <p style="text-align:center;font-size:10px;margin-top:8px;color:#666;">Respondemos en menos de 24 hs.</p>
+      <span class="wf-label">Reserva</span>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="wf-block wf-footer">
+      <div class="wf-footer-logo"></div>
+      <div>© 2026 Princess Club</div>
+      <div class="wf-footer-links"><span>Contacto</span><span>Opiniones</span></div>
+      <div style="font-size:9px;margin-top:8px;line-height:1.6;">
+        WA: +54 9 11 3394-2309<br>
+        info@princessclub.com · CABA<br>
+        Lun–Vie 9–18 hs
+      </div>
+      <span class="wf-label">Footer</span>
+    </div>
+  </div>
+
+  <div class="wf-fab" title="FAB WhatsApp">WA</div>
+</body>
+</html>
