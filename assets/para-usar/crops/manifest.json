@@ -1,0 +1,84 @@
+{
+  "version": 1,
+  "description": "Checklist de recortes por imagen. Marcá received: true al subir cada archivo.",
+  "paths": {
+    "vertical": "assets/para-usar/crops/vertical/{id}.jpeg",
+    "square": "assets/para-usar/crops/square/{id}.jpeg",
+    "horizontal": "assets/para-usar/crops/horizontal/{id}.jpeg",
+    "fallback": "assets/para-usar/{id}.jpeg"
+  },
+  "variants": {
+    "vertical": {
+      "ratio": "4:5",
+      "usage": "Hero mobile, maquillaje mobile, lightbox (foto completa)",
+      "guide": "Recorte VERDE: de arriba de la cabeza a los pies, sin techo vacío"
+    },
+    "square": {
+      "ratio": "1:1",
+      "usage": "Cards de shows, personajes, celdas de galería",
+      "guide": "Recorte entre líneas ROJAS: caras centradas, tercio superior"
+    },
+    "horizontal": {
+      "ratio": "16:9",
+      "usage": "Hero desktop, maquillaje desktop",
+      "guide": "Recorte entre líneas ROJAS: caras centradas, formato panorámico"
+    }
+  },
+  "recommendedExportPx": {
+    "vertical": { "width": 800, "height": 1000 },
+    "square": { "width": 800, "height": 800 },
+    "horizontal": { "width": 1280, "height": 720 }
+  },
+  "images": [
+    {
+      "id": "hero-princesas-hielo",
+      "label": "Hero — dos princesas de hielo",
+      "received": { "vertical": false, "square": false, "horizontal": false }
+    },
+    {
+      "id": "reina-hielo-1",
+      "label": "Princesa de hielo (individual 1)",
+      "received": { "vertical": false, "square": false, "horizontal": false }
+    },
+    {
+      "id": "reina-hielo-2",
+      "label": "Princesa de hielo (individual 2)",
+      "received": { "vertical": false, "square": false, "horizontal": false }
+    },
+    {
+      "id": "show-sirena",
+      "label": "Show sirena del mar",
+      "received": { "vertical": false, "square": false, "horizontal": false }
+    },
+    {
+      "id": "show-guerreras-kpop",
+      "label": "Show guerreras K-Pop (grupo)",
+      "received": { "vertical": false, "square": false, "horizontal": false }
+    },
+    {
+      "id": "guerreras-kpop-1",
+      "label": "Guerrera K-Pop 1",
+      "received": { "vertical": false, "square": false, "horizontal": false }
+    },
+    {
+      "id": "guerreras-kpop-2",
+      "label": "Guerrera K-Pop 2",
+      "received": { "vertical": false, "square": false, "horizontal": false }
+    },
+    {
+      "id": "galeria-evento-1",
+      "label": "Galería — momento en cumpleaños",
+      "received": { "vertical": false, "square": false, "horizontal": false }
+    },
+    {
+      "id": "galeria-evento-2",
+      "label": "Galería — show temático",
+      "received": { "vertical": false, "square": false, "horizontal": false }
+    },
+    {
+      "id": "maquillaje-artistico",
+      "label": "Maquillaje artístico",
+      "received": { "vertical": false, "square": false, "horizontal": false }
+    }
+  ]
+}

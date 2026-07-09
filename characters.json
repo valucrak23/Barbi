@@ -1,0 +1,52 @@
+[
+  {
+    "id": "frozen",
+    "title": "Frozen",
+    "subtitle": "Anna y Elsa",
+    "folder": "Nosotras/Frozen",
+    "photos": ["AnayElsa", "AnayElsa2", "Elsa", "Elsa2", "elsamagia", "ana"],
+    "videos": [],
+    "waName": "Frozen (Anna y Elsa)"
+  },
+  {
+    "id": "sirenita",
+    "title": "La Sirenita",
+    "subtitle": "Ariel",
+    "folder": "Nosotras/Sirenita",
+    "photos": ["ArielLaSirenita", "SirenitaConNena1", "SirenitaConNena2", "SirenitaConNena3"],
+    "videos": [],
+    "waName": "La Sirenita (Ariel)"
+  },
+  {
+    "id": "kpop",
+    "title": "Guerreras K-Pop",
+    "subtitle": "Rumi, Mira y Zoey",
+    "folder": "Nosotras/Kpop",
+    "photos": ["LasGuerrerasKpop", "Guerrera1", "Guerrera2", "Guerrera3"],
+    "videos": [
+      { "src": "Nosotras/Kpop/videoshow.mp4", "label": "Show en vivo" },
+      { "src": "Nosotras/Kpop/Videorumi.mp4", "label": "Rumi — detrás de escena" }
+    ],
+    "waName": "Guerreras K-Pop (Rumi, Mira, Zoey)"
+  },
+  {
+    "id": "margarita",
+    "title": "Margarita",
+    "subtitle": "Energía, color y diversión en la fiesta",
+    "folder": "Nosotras/Margarita",
+    "photos": ["Margarita", "Margarita2"],
+    "videos": [
+      { "src": "Nosotras/Margarita/video-margarita.mp4", "label": "Margarita en acción" }
+    ],
+    "waName": "Margarita"
+  },
+  {
+    "id": "aurora",
+    "title": "Aurora",
+    "subtitle": "Princesa clásica con elegancia y encanto",
+    "folder": "Nosotras/Aurora",
+    "photos": ["aurora"],
+    "videos": [],
+    "waName": "Aurora"
+  }
+]

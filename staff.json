@@ -1,0 +1,9 @@
+{
+  "folder": "Nosotras/Conocenos",
+  "members": [
+    { "id": "barbi", "name": "Barbi", "base": "Barbi" },
+    { "id": "anita", "name": "Anita", "base": "Anita" },
+    { "id": "vicky", "name": "Vicky", "base": "Vicky" },
+    { "id": "artistas", "name": "Artistas", "base": "Artistas", "subtitle": "Nuestro elenco de artistas en personaje" }
+  ]
+}

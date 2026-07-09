@@ -1,0 +1,97 @@
+[
+  {
+    "id": "minihechizo",
+    "label": "Pack",
+    "title": "Mini Hechizo",
+    "intro": "Una princesa a elección llega para sorprender con encanto y magia.",
+    "includes": [
+      "Bienvenida, interacción en personaje y fotos con la homenajeada/o, familia e invitados",
+      "Momento de la torta y canción de cumpleaños"
+    ],
+    "duration": "20 minutos",
+    "ideal": "Familias que quieren un toque especial y único en su celebración."
+  },
+  {
+    "id": "sueno-princesa",
+    "label": "Pack",
+    "title": "Sueño de Princesa",
+    "intro": "Viví una experiencia mágica junto a tu princesa favorita.",
+    "includes": [
+      "Canto en vivo, participación de los chicos e interacción en personaje con saludos, charlas y fotos",
+      "Momento de la torta y coronación final"
+    ],
+    "duration": "40 minutos",
+    "ideal": "Cumpleaños y eventos donde se busque un show interactivo y artístico."
+  },
+  {
+    "id": "sirenita",
+    "label": "Pack",
+    "title": "La Sirenita",
+    "intro": "Sumergite en un mundo submarino con Ariel y viví la magia del océano en tu fiesta.",
+    "includes": [
+      "Bienvenida en personaje, interacción, juegos y canto en vivo",
+      "Fotos con invitados y momento especial de la torta"
+    ],
+    "duration": "40 minutos",
+    "ideal": "Cumpleaños de fans de La Sirenita y eventos con temática marina."
+  },
+  {
+    "id": "margarita",
+    "label": "Pack",
+    "title": "Margarita",
+    "intro": "Margarita llega a tu evento con energía, color y mucha diversión.",
+    "includes": [
+      "Interacción en personaje, saludos, charlas y fotos con invitados",
+      "Momento de la torta y participación de los chicos"
+    ],
+    "duration": "30 minutos",
+    "ideal": "Cumpleaños infantiles y fiestas donde quieran un personaje alegre y cercano."
+  },
+  {
+    "id": "mensaje-magico",
+    "label": "Pack",
+    "title": "Mensaje Mágico",
+    "intro": "Un detalle especial que sorprende a cualquier fan de las princesas.",
+    "includes": [
+      "Video personalizado de la princesa elegida",
+      "Mensaje con nombre y dedicatoria especial"
+    ],
+    "duration": null,
+    "ideal": "Cumpleaños a distancia, sorpresas en casa o como complemento de otro regalo."
+  },
+  {
+    "id": "magia-estelar",
+    "label": "Pack",
+    "title": "Magia Estelar",
+    "intro": "Una o dos princesas recorren el evento sorprendiendo a grandes y chicos.",
+    "includes": [
+      "Interacciones y fotos con los invitados"
+    ],
+    "duration": "60 minutos",
+    "ideal": "Colegios, empresas y eventos familiares grandes que quieren sumar un toque distinto."
+  },
+  {
+    "id": "reino-magico",
+    "label": "Pack",
+    "title": "Reino Mágico",
+    "intro": "Dos princesas llegan a tu evento para vivir un momento único.",
+    "includes": [
+      "Canto en vivo, participación de los chicos e interacción en personaje con saludos, charlas y fotos",
+      "Momento de la torta y coronación final"
+    ],
+    "duration": "45 minutos",
+    "ideal": "Fiestas que quieran una experiencia más completa con personajes dobles."
+  },
+  {
+    "id": "reina-hielo",
+    "label": "Show",
+    "title": "Frozen",
+    "intro": "Reviví la magia de Arendelle con Anna y Elsa en escena.",
+    "includes": [
+      "Show que recrea los momentos más inolvidables de la película, con interacción en personaje, saludos, charlas y fotos",
+      "Momento de la torta junto a los personajes"
+    ],
+    "duration": "50 minutos",
+    "ideal": "Quienes aman el mundo congelado y quieren una experiencia grupal única."
+  }
+]

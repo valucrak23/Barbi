@@ -164,7 +164,7 @@
 }
 
 /* Escala tipográfica desktop */
-@media (min-width: 900px) {
+@media (min-width: 1024px) {
   :root {
     --text-3xl: 2.5rem;
     --text-2xl: 2rem;

@@ -12,14 +12,17 @@
   <meta property="og:url" content="https://princessclub.com/">
   <meta property="og:title" content="Princess Club — Shows con personajes en vivo">
   <meta property="og:description" content="Shows y presencias con personajes en vivo, vestuarios premium y momentos mágicos para cumpleaños y eventos en CABA.">
-  <meta property="og:image" content="assets/para-usar/hero-princesas-hielo.jpeg">
+  <meta property="og:image" content="assets/para-usar/Imagenes%20Princesas/hero-princesas-hielo.jpeg">
 
   <title>Princess Club — Shows con personajes en vivo en CABA</title>
-  <link rel="icon" type="image/png" href="assets/para-usar/princessclub_logo-secundario.png">
+  <link rel="icon" type="image/png" href="assets/para-usar/Logos/princessclub_logo-secundario.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Sour+Gummy:wght@400;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/theme.js"></script>
+  <link rel="stylesheet" href="css/styles.css?v=12">
+  <link rel="stylesheet" href="css/redesign.css?v=21">
+  <link rel="stylesheet" href="css/theme-dark.css?v=7">
 </head>
 <body>
   <a class="skip-link" href="#main">Saltar al contenido</a>
@@ -27,25 +30,42 @@
   <header class="site-header" role="banner">
     <div class="container header-inner">
       <a href="#inicio" class="brand-secondary" aria-label="Princess Club">
-        <img src="assets/para-usar/princessclub_logo-secundario.png" alt="" class="brand-logo-secondary" width="40" height="40">
+        <img src="assets/para-usar/Logos/princessclub_logo-secundario.png" alt="" class="brand-logo-secondary" width="40" height="40">
       </a>
       <a href="#inicio" class="brand" aria-label="Princess Club">
-        <img src="assets/para-usar/PRINCESSCLUB_PNG.png" alt="Princess Club" class="brand-logo" width="80" height="80">
+        <img src="assets/para-usar/Logos/PRINCESSCLUB_PNG.png" alt="Princess Club" class="brand-logo">
       </a>
 
       <nav class="site-nav" aria-label="Principal" id="desktop-nav">
         <ul class="nav-list">
           <li><a href="#inicio">Inicio</a></li>
           <li><a href="#shows">Shows</a></li>
+          <li><a href="#packs">Packs</a></li>
           <li><a href="#personajes">Personajes</a></li>
           <li><a href="#galeria">Galería</a></li>
           <li><a href="#preguntas">Preguntas</a></li>
           <li><a href="#consulta">Consultar</a></li>
+          <li class="theme-toggle-item">
+            <button type="button" class="theme-toggle" data-theme-toggle aria-label="Cambiar tema" title="Cambiar tema">
+              <span class="theme-toggle__icon theme-toggle__icon--sun" aria-hidden="true">☀️</span>
+              <span class="theme-toggle__icon theme-toggle__icon--moon" aria-hidden="true">🌙</span>
+            </button>
+          </li>
         </ul>
       </nav>
 
       <div class="header-actions">
-        <a class="btn btn-primary btn-sm header-cta" href="#" id="headerReserveBtn" target="_blank" rel="noopener noreferrer">Consultar</a>
+        <a class="btn btn-primary btn-sm header-action-btn" href="#" id="headerReserveBtn" target="_blank" rel="noopener noreferrer" aria-label="Consultar por WhatsApp">
+          <svg class="header-action-btn__icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.883 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+          <span>Consultar</span>
+        </a>
+        <a class="btn btn-secondary btn-sm header-action-btn header-action-btn--ig" href="#" id="headerInstagramBtn" target="_blank" rel="noopener noreferrer" aria-label="Ver Instagram">
+          <svg class="header-action-btn__icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 11-2.881 0 1.44 1.44 0 012.881 0z"/>
+          </svg>
+        </a>
         <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="nav-drawer" aria-label="Abrir menú">
           <span class="bar"></span>
           <span class="bar"></span>
@@ -59,26 +79,45 @@
   <aside class="nav-drawer" id="nav-drawer" aria-hidden="true" aria-label="Menú de navegación">
     <div class="nav-drawer-header">
       <span class="nav-drawer-title">Menú</span>
+      <button type="button" class="theme-toggle theme-toggle--drawer" data-theme-toggle aria-label="Cambiar tema" title="Cambiar tema">
+        <span class="theme-toggle__icon theme-toggle__icon--sun" aria-hidden="true">☀️</span>
+        <span class="theme-toggle__icon theme-toggle__icon--moon" aria-hidden="true">🌙</span>
+      </button>
       <button class="nav-drawer-close" id="navClose" type="button" aria-label="Cerrar menú">✕</button>
     </div>
     <nav aria-label="Principal móvil">
       <ul class="nav-drawer-list">
         <li><a href="#inicio">Inicio</a></li>
         <li><a href="#shows">Shows</a></li>
+        <li><a href="#packs">Packs</a></li>
         <li><a href="#personajes">Personajes</a></li>
         <li><a href="#galeria">Galería</a></li>
         <li><a href="#preguntas">Preguntas</a></li>
         <li><a href="#consulta">Consultar</a></li>
       </ul>
     </nav>
-    <div class="nav-drawer-footer">
-      <a class="btn btn-primary btn-lg" href="#" id="drawerReserveBtn" target="_blank" rel="noopener noreferrer">Consultar por WhatsApp</a>
+    <div class="nav-drawer-footer nav-drawer-footer--actions">
+      <a class="btn btn-primary btn-lg header-action-btn" href="#" id="drawerReserveBtn" target="_blank" rel="noopener noreferrer" aria-label="Consultar por WhatsApp">
+        <svg class="header-action-btn__icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.883 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+        <span>Consultar</span>
+      </a>
+      <a class="btn btn-secondary btn-lg header-action-btn header-action-btn--ig" href="#" id="drawerInstagramBtn" target="_blank" rel="noopener noreferrer" aria-label="Ver Instagram">
+        <svg class="header-action-btn__icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 11-2.881 0 1.44 1.44 0 012.881 0z"/>
+        </svg>
+        <span>Instagram</span>
+      </a>
     </div>
   </aside>
 
   <main id="main">
     <section class="hero" id="inicio">
       <div class="container hero-inner">
+        <a href="#inicio" class="hero-brand" aria-label="Princess Club">
+          <img src="assets/para-usar/Logos/PRINCESSCLUB_PNG.png" alt="Princess Club" class="hero-brand__logo" width="320" height="120">
+        </a>
         <div class="hero-copy">
           <h1 class="hero-title">Hacemos que su personaje favorito llegue a la fiesta</h1>
           <p class="hero-sub">Shows infantiles con personajes en vivo, vestuarios premium, música, fotos y momentos mágicos para cumpleaños y eventos.</p>
@@ -86,55 +125,69 @@
             <a class="btn btn-primary btn-lg" href="#" id="heroReserveBtn" target="_blank" rel="noopener noreferrer">Consultar fecha por WhatsApp</a>
             <a class="btn btn-secondary btn-lg" href="#shows">Ver shows</a>
           </div>
+          <ul class="trust-chips" aria-label="Confianza">
+            <li class="trust-chip"><span class="trust-chip__icon" aria-hidden="true">👑</span><span>Actrices en personaje</span></li>
+            <li class="trust-chip"><span class="trust-chip__icon" aria-hidden="true">✨</span><span>Vestuarios premium</span></li>
+            <li class="trust-chip"><span class="trust-chip__icon" aria-hidden="true">📍</span><span>Viático incluido en CABA</span></li>
+            <li class="trust-chip"><span class="trust-chip__icon" aria-hidden="true">🎤</span><span>Sonido en shows largos</span></li>
+          </ul>
         </div>
-        <figure class="hero-visual">
-          <img src="assets/para-usar/hero-princesas-hielo.jpeg" alt="Dos princesas de hielo en show infantil de Princess Club" width="600" height="400" fetchpriority="high">
+        <figure class="hero-visual aspect-hero">
+          <img
+            class="img-cover-face img-pos-hero"
+            data-media-folder="Nosotras/Frozen"
+            data-media-base="AnayElsa"
+            alt="Anna y Elsa (Frozen) en show infantil de Princess Club"
+            width="600"
+            height="400"
+            fetchpriority="high"
+          >
         </figure>
       </div>
     </section>
 
-    <div class="trust-bar" aria-label="Confianza">
-      <div class="trust-bar-inner">
-        <div class="trust-item">
-          <span class="trust-icon" aria-hidden="true">👑</span>
-          <span class="trust-label">Actrices en personaje</span>
-        </div>
-        <div class="trust-item">
-          <span class="trust-icon" aria-hidden="true">✨</span>
-          <span class="trust-label">Vestuarios premium</span>
-        </div>
-        <div class="trust-item">
-          <span class="trust-icon" aria-hidden="true">📍</span>
-          <span class="trust-label">Viático incluido en CABA</span>
-        </div>
-        <div class="trust-item">
-          <span class="trust-icon" aria-hidden="true">🎤</span>
-          <span class="trust-label">Sonido profesional en shows largos</span>
-        </div>
-      </div>
-    </div>
-
     <section id="shows" class="section" data-animate>
       <div class="container">
         <h2 class="section-title">
-          <img src="assets/para-usar/elementos_Eventos.png" alt="" class="section-icon" width="48" height="48">
+          <img src="assets/para-usar/Iconos/elementos_Eventos.png" alt="" class="section-icon" width="48" height="48">
           Nuestros shows
         </h2>
         <p class="section-subtitle">Ofrecemos shows y presencias de distintas duraciones que se adaptan a cada tipo de evento.</p>
-        <div class="shows-grid" id="showsContainer">
+
+        <div class="pricing-showcase" id="showsPricing">
           <p class="loading-msg">Cargando shows...</p>
         </div>
+
         <div class="shows-disclaimer">
           <p>Los valores incluyen viático dentro de CABA. Para otras localidades, consultanos por WhatsApp y te confirmamos disponibilidad y costo de traslado.</p>
           <p><strong>Precios sujetos a actualización.</strong> Consultá disponibilidad para tu fecha.</p>
+          <p class="shows-disclaimer__sound">Los shows de 35 min (1 personaje), 45 min (2 personajes) y 45 min (3 personajes) incluyen <strong>sonido profesional</strong> (parlante + micrófonos + sonidista).</p>
         </div>
       </div>
     </section>
 
-    <section id="como-funciona" class="section section--alt" data-animate>
+    <section id="packs" class="section section--alt" data-animate>
+      <div class="container">
+        <h2 class="section-title">
+          <img src="assets/para-usar/Iconos/elementos_Princesas.png" alt="" class="section-icon" width="48" height="48">
+          Nuestros packs
+        </h2>
+        <p class="section-subtitle">Experiencias especiales para sumar magia a cumpleaños, eventos familiares y celebraciones a distancia.</p>
+
+        <div class="packs-grid" id="packsContainer">
+          <p class="loading-msg">Cargando packs...</p>
+        </div>
+
+        <div class="section-cta">
+          <a class="btn btn-primary btn-lg" href="#" id="packsReserveBtn" target="_blank" rel="noopener noreferrer">Consultar packs por WhatsApp</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="como-funciona" class="section" data-animate>
       <div class="container">
         <h2 class="section-title">Cómo funciona</h2>
-        <ol class="steps">
+        <ol class="steps steps--connected">
           <li class="step">
             <span class="step-number" aria-hidden="true">1</span>
             <div class="step-content">
@@ -163,42 +216,39 @@
     <section id="personajes" class="section" data-animate>
       <div class="container">
         <h2 class="section-title">
-          <img src="assets/para-usar/elementos_Princesas.png" alt="" class="section-icon" width="48" height="48">
-          Personajes y shows disponibles
+          <img src="assets/para-usar/Iconos/elementos_Princesas.png" alt="" class="section-icon" width="48" height="48">
+          Nuestros personajes
         </h2>
-        <p class="section-subtitle">Elegí el universo favorito para crear una experiencia inolvidable.</p>
-        <div class="character-grid">
-          <button class="character-card" type="button" data-character="Princesas de hielo">
-            <img src="assets/para-usar/reina-hielo-1.jpeg" alt="Princesas de hielo en show infantil" width="400" height="280" loading="lazy">
-            <span class="character-card__label">Princesas de hielo</span>
-          </button>
-          <button class="character-card" type="button" data-character="Sirena del mar">
-            <img src="assets/para-usar/show-sirena.jpeg" alt="Show temático sirena del mar" width="400" height="280" loading="lazy">
-            <span class="character-card__label">Sirena del mar</span>
-          </button>
-          <button class="character-card" type="button" data-character="Guerreras K-Pop">
-            <img src="assets/para-usar/show-guerreras-kpop.jpeg" alt="Show guerreras K-Pop en evento infantil" width="400" height="280" loading="lazy">
-            <span class="character-card__label">Guerreras K-Pop</span>
-          </button>
-          <button class="character-card" type="button" data-character="Princesas clásicas">
-            <img src="assets/para-usar/reina-hielo-2.jpeg" alt="Princesas clásicas en cumpleaños infantil" width="400" height="280" loading="lazy">
-            <span class="character-card__label">Princesas clásicas</span>
-          </button>
-          <button class="character-card" type="button" data-character="Shows temáticos">
-            <img src="assets/para-usar/galeria-evento-2.jpeg" alt="Shows temáticos personalizados" width="400" height="280" loading="lazy">
-            <span class="character-card__label">Shows temáticos</span>
-          </button>
+        <p class="section-subtitle">Conocé a cada universo, mirá fotos reales y videos de nuestros shows en acción.</p>
+
+        <div class="characters-showcase" id="charactersShowcase">
+          <p class="loading-msg">Cargando personajes...</p>
         </div>
+
         <div class="section-cta">
           <a class="btn btn-primary" href="#" id="characterBtn" target="_blank" rel="noopener noreferrer">Consultar personaje disponible</a>
         </div>
       </div>
     </section>
 
-    <section id="eventos" class="section section--alt" data-animate>
+    <section id="staff" class="section section--alt" data-animate>
+      <div class="container staff-section">
+        <h2 class="section-title">
+          <img src="assets/para-usar/Iconos/elementos_Princesas.png" alt="" class="section-icon" width="48" height="48">
+          Conocé al Club
+        </h2>
+        <p class="section-subtitle">El staff que hace posible la magia</p>
+
+        <div class="staff-accordion" id="staffGrid">
+          <p class="loading-msg">Cargando staff...</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="eventos" class="section" data-animate>
       <div class="container">
         <h2 class="section-title">
-          <img src="assets/para-usar/elementos_Eventos.png" alt="" class="section-icon" width="48" height="48">
+          <img src="assets/para-usar/Iconos/elementos_Eventos.png" alt="" class="section-icon" width="48" height="48">
           Vamos a tu evento
         </h2>
         <p class="section-subtitle">Princess Club se adapta a distintos espacios y tipos de celebración.</p>
@@ -216,8 +266,16 @@
     <section id="maquillaje" class="section" data-animate>
       <div class="container">
         <div class="maquillaje-block">
-          <div class="maquillaje-block__media">
-            <img src="assets/para-usar/maquillaje-artistico.jpeg" alt="Maquillaje artístico infantil en evento" width="600" height="400" loading="lazy">
+          <div class="maquillaje-block__media aspect-card aspect-card--wide">
+            <img
+              class="img-cover-face img-pos-maquillaje"
+              data-media-folder="Maquillaje"
+              data-media-base="Maquillajes"
+              alt="Maquillaje artístico infantil en evento"
+              width="600"
+              height="400"
+              loading="lazy"
+            >
           </div>
           <div class="maquillaje-block__copy">
             <h2 class="section-title section-title--inline">Maquillaje artístico</h2>
@@ -232,35 +290,35 @@
     <section id="galeria" class="section section--alt" data-animate>
       <div class="container">
         <h2 class="section-title">
-          <img src="assets/para-usar/elementos_Eventos.png" alt="" class="section-icon" width="48" height="48">
+          <img src="assets/para-usar/Iconos/elementos_Eventos.png" alt="" class="section-icon" width="48" height="48">
           Galería
         </h2>
         <p class="section-subtitle">Momentos reales de nuestros shows en cumpleaños y eventos.</p>
-        <div class="photo-grid">
-          <figure class="photo-grid__item photo-grid__item--wide">
-            <img src="assets/para-usar/hero-princesas-hielo.jpeg" alt="Princesas de hielo en show infantil" width="600" height="400" loading="lazy">
-          </figure>
-          <figure class="photo-grid__item">
-            <img src="assets/para-usar/show-sirena.jpeg" alt="Personaje sirena del mar en evento" width="400" height="300" loading="lazy">
-          </figure>
-          <figure class="photo-grid__item">
-            <img src="assets/para-usar/show-guerreras-kpop.jpeg" alt="Guerreras K-Pop en show infantil" width="400" height="300" loading="lazy">
-          </figure>
-          <figure class="photo-grid__item">
-            <img src="assets/para-usar/maquillaje-artistico.jpeg" alt="Maquillaje artístico en cumpleaños" width="400" height="300" loading="lazy">
-          </figure>
-          <figure class="photo-grid__item">
-            <img src="assets/para-usar/reina-hielo-1.jpeg" alt="Princesa de hielo interactuando con niños" width="400" height="300" loading="lazy">
-          </figure>
-          <figure class="photo-grid__item">
-            <img src="assets/para-usar/guerreras-kpop-1.jpeg" alt="Guerrera K-Pop en personaje" width="400" height="300" loading="lazy">
-          </figure>
-          <figure class="photo-grid__item">
-            <img src="assets/para-usar/guerreras-kpop-2.jpeg" alt="Show guerreras K-Pop en evento" width="400" height="300" loading="lazy">
-          </figure>
-          <figure class="photo-grid__item">
-            <img src="assets/para-usar/galeria-evento-1.jpeg" alt="Momento mágico en cumpleaños infantil" width="400" height="300" loading="lazy">
-          </figure>
+        <div class="photo-grid" id="photoGrid">
+          <button type="button" class="photo-grid__item aspect-gallery" data-lightbox aria-label="Ampliar: Anna y Elsa (Frozen)">
+            <img class="img-cover-face img-pos-hero" data-media-folder="Nosotras/Frozen" data-media-base="AnayElsa" alt="Anna y Elsa (Frozen) en show infantil" width="600" height="400" loading="lazy">
+          </button>
+          <button type="button" class="photo-grid__item aspect-gallery" data-lightbox aria-label="Ampliar: Ariel — La Sirenita">
+            <img class="img-cover-face img-pos-sirena" data-media-folder="Nosotras/Sirenita" data-media-base="ArielLaSirenita" alt="Ariel (La Sirenita) en evento" width="400" height="300" loading="lazy">
+          </button>
+          <button type="button" class="photo-grid__item aspect-gallery" data-lightbox aria-label="Ampliar: Guerreras K-Pop — Rumi, Mira y Zoey">
+            <img class="img-cover-face img-pos-kpop-group" data-media-folder="Nosotras/Kpop" data-media-base="LasGuerrerasKpop" alt="Rumi, Mira y Zoey — Guerreras K-Pop en show infantil" width="400" height="300" loading="lazy">
+          </button>
+          <button type="button" class="photo-grid__item aspect-gallery" data-lightbox aria-label="Ampliar: Maquillaje artístico">
+            <img class="img-cover-face img-pos-maquillaje" data-media-folder="Maquillaje" data-media-base="Maquillajes" alt="Maquillaje artístico en cumpleaños" width="400" height="300" loading="lazy">
+          </button>
+          <button type="button" class="photo-grid__item aspect-gallery" data-lightbox aria-label="Ampliar: Elsa (Frozen)">
+            <img class="img-cover-face img-pos-reina1" data-media-folder="Nosotras/Frozen" data-media-base="Elsa" alt="Elsa (Frozen) interactuando con niños" width="400" height="300" loading="lazy">
+          </button>
+          <button type="button" class="photo-grid__item aspect-gallery" data-lightbox aria-label="Ampliar: Rumi — Guerrera K-Pop">
+            <img class="img-cover-face img-pos-kpop1" data-media-folder="Nosotras/Kpop" data-media-base="Guerrera1" alt="Rumi — Guerrera K-Pop en personaje" width="400" height="300" loading="lazy">
+          </button>
+          <button type="button" class="photo-grid__item aspect-gallery" data-lightbox aria-label="Ampliar: Guerreras K-Pop en evento">
+            <img class="img-cover-face img-pos-kpop2" data-media-folder="Nosotras/Kpop" data-media-base="Guerrera2" alt="Mira y Zoey — Guerreras K-Pop en evento" width="400" height="300" loading="lazy">
+          </button>
+          <button type="button" class="photo-grid__item aspect-gallery" data-lightbox aria-label="Ampliar: Momento mágico en cumpleaños">
+            <img class="img-cover-face img-pos-evento1" data-crop-base="galeria-evento-1" data-crop-context="gallery" src="assets/para-usar/shows/galeria-evento-1.jpeg" alt="Momento mágico en cumpleaños infantil" width="400" height="300" loading="lazy">
+          </button>
         </div>
         <div class="section-cta">
           <a class="btn btn-secondary" href="#" id="instagramBtn" target="_blank" rel="noopener noreferrer">Ver más en Instagram</a>
@@ -268,10 +326,44 @@
       </div>
     </section>
 
+    <section id="instagram" class="section" data-animate>
+      <div class="container">
+        <h2 class="section-title">
+          <img src="assets/para-usar/Iconos/elementos_Opiniones.png" alt="" class="section-icon" width="48" height="48">
+          Instagram
+        </h2>
+        <p class="section-subtitle">Seguinos en @princessclubshows y mirá momentos reales de nuestros shows.</p>
+        <div class="instagram-preview" id="instagramPreview">
+          <div class="instagram-preview__embed-wrap" id="instagramEmbedWrap">
+            <iframe
+              id="instagramEmbed"
+              class="instagram-preview__embed"
+              data-src="https://www.instagram.com/princessclubshows/embed/"
+              title="Perfil de Instagram Princess Club"
+              loading="lazy"
+              allowtransparency="true"
+              scrolling="no"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+          <div class="instagram-preview__fallback" id="instagramFallback" hidden>
+            <p class="instagram-preview__fallback-msg">No pudimos cargar el perfil embebido (a veces lo bloquea una extensión del navegador). Podés verlo tocando el botón de abajo.</p>
+            <div class="instagram-preview__grid" aria-hidden="true">
+              <img class="img-cover-face" data-media-folder="Nosotras/Frozen" data-media-base="AnayElsa" data-media-prefer="c" alt="" width="200" height="200" loading="lazy">
+              <img class="img-cover-face" data-media-folder="Nosotras/Sirenita" data-media-base="ArielLaSirenita" data-media-prefer="c" alt="" width="200" height="200" loading="lazy">
+              <img class="img-cover-face" data-media-folder="Nosotras/Kpop" data-media-base="LasGuerrerasKpop" data-media-prefer="c" alt="" width="200" height="200" loading="lazy">
+              <img class="img-cover-face" data-media-folder="Maquillaje" data-media-base="Maquillajes" data-media-prefer="c" alt="" width="200" height="200" loading="lazy">
+            </div>
+          </div>
+          <a class="btn btn-secondary instagram-preview__link" href="#" id="instagramProfileBtn" target="_blank" rel="noopener noreferrer">Ver perfil en Instagram</a>
+        </div>
+      </div>
+    </section>
+
     <section id="testimonios" class="section" data-animate>
       <div class="container">
         <h2 class="section-title">
-          <img src="assets/para-usar/elementos_Opiniones.png" alt="" class="section-icon" width="48" height="48">
+          <img src="assets/para-usar/Iconos/elementos_Opiniones.png" alt="" class="section-icon" width="48" height="48">
           Lo que dicen las familias
         </h2>
         <div class="testimonials-placeholder">
@@ -284,7 +376,7 @@
     <section id="preguntas" class="section section--alt" data-animate>
       <div class="container">
         <h2 class="section-title">
-          <img src="assets/para-usar/preguntas.png" alt="" class="section-icon" width="48" height="48">
+          <img src="assets/para-usar/Iconos/preguntas.png" alt="" class="section-icon" width="48" height="48">
           Preguntas frecuentes
         </h2>
         <div class="accordion">
@@ -343,7 +435,7 @@
     <section id="consulta" class="section section--fab-safe" data-animate>
       <div class="container">
         <h2 class="section-title">
-          <img src="assets/para-usar/elementos_Contacto.png" alt="" class="section-icon" width="48" height="48">
+          <img src="assets/para-usar/Iconos/elementos_Contacto.png" alt="" class="section-icon" width="48" height="48">
           Consultá tu fecha
         </h2>
         <p class="section-subtitle">Completá los datos y te derivamos a WhatsApp con tu consulta lista para enviar.</p>
@@ -366,7 +458,7 @@
           </div>
           <div class="input-group">
             <label class="input-label" for="reserveTheme">Personaje o temática</label>
-            <input class="input" type="text" id="reserveTheme" name="theme" placeholder="Ej: Princesas de hielo, Guerreras K-Pop" required>
+            <input class="input" type="text" id="reserveTheme" name="theme" placeholder="Ej: Frozen, La Sirenita, Guerreras K-Pop" required>
           </div>
           <div class="input-group">
             <label class="input-label" for="reserveKids">Cantidad aproximada de chicos</label>
@@ -387,7 +479,7 @@
   <footer class="site-footer" role="contentinfo">
     <div class="container footer-inner">
       <div class="footer-col footer-brand">
-        <img src="assets/para-usar/princessclub_logo-secundario.png" alt="Princess Club" class="footer-logo" width="50" height="50">
+        <img src="assets/para-usar/Logos/princessclub_logo-secundario.png" alt="Princess Club" class="footer-logo" width="50" height="50">
         <p class="footer-copy">© <span id="year"></span> Princess Club</p>
       </div>
       <div class="footer-col footer-links">
@@ -421,12 +513,24 @@
     </div>
   </div>
 
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Vista ampliada de imagen">
+    <button class="lightbox__close" id="lightboxClose" type="button" aria-label="Cerrar imagen">✕</button>
+    <div class="lightbox__stage">
+      <img class="lightbox__img" id="lightboxImg" src="" alt="">
+    </div>
+  </div>
+
   <a class="fab-wa" id="fabWa" href="#" target="_blank" rel="noopener noreferrer" aria-label="Consultar por WhatsApp">
     <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
       <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.883 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
     </svg>
   </a>
 
-  <script src="js/main.js" defer></script>
+  <script src="js/assets.js?v=5" defer></script>
+  <script src="js/heading-mark.js?v=4" defer></script>
+  <script src="js/accordion.js?v=2" defer></script>
+  <script src="js/crops.js?v=5" defer></script>
+  <script src="js/media-carousel.js?v=3" defer></script>
+  <script src="js/main.js?v=11" defer></script>
 </body>
 </html>
